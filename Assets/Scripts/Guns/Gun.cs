@@ -2,22 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun
+public class Gun : MonoBehaviour
 {
-    int nbOfBullets;
-    float range, dmg;
+    public int nbOfBullets, maxBullets;
+    public float range, dmg;
+    public bool CanShoot;
 
-    public virtual void Shoot()
+    public Camera fpsCam;
+
+    public void Shoot()
     {
+        RaycastHit hit;
+        nbOfBullets--;
 
+        if (nbOfBullets <= 0)
+        {
+            CanShoot = false;
+        }
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+        }
     }
 
-    public virtual void Reload()
+    public void Reload()
     {
-
+        nbOfBullets = maxBullets;
+        CanShoot = true;
     }
 
-    public virtual void Aim()
+    public void Aim()
     {
 
     }
