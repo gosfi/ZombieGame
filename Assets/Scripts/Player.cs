@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int speed = 10;
+    public float mouseSensitivity = 100f;
+    public Transform player;
+    public float yRotation = 0f;
 
 
 
-    Vector3 move()
+    Vector3 Move()
     {
         Vector3 direction = new Vector3();
 
@@ -32,15 +35,28 @@ public class Player : MonoBehaviour
         return direction;
     }
 
+    void Rotate()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        yRotation -= mouseY;
+        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+        player.Rotate(Vector3.up * mouseX);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += move() * Time.deltaTime;
+        transform.position += Move() * Time.deltaTime;
+        Rotate();
     }
 }
