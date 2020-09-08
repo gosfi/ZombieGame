@@ -665,10 +665,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: e7778cad-417f-48ed-af8b-f9944a6d3e76
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: ZombieGame
+  organizationId: gosfi21
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
