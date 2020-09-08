@@ -22,6 +22,8 @@ public class Pistol : Gun
         {
             Reload();
         }
+
+        Aim(Input.GetButton("Fire2"));
         
     }
 

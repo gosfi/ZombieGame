@@ -8,6 +8,8 @@ public class Gun : MonoBehaviour
     public float range, dmg, aimSpeed, fireRate;
     public bool CanShoot;
 
+    public Vector3 AimDownSight, HipFire; //0,-0.25,0.8
+
     public Camera fpsCam;
 
     public float nextTimeToFire;
@@ -36,6 +38,13 @@ public class Gun : MonoBehaviour
 
     public virtual void Aim(bool isAiming)
     {
-
+        if (isAiming)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, AimDownSight, 15 * Time.deltaTime);
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, HipFire, 15 * Time.deltaTime);
+        }
     }
 }
