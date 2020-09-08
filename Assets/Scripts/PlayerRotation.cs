@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 500f;
     public Transform player;
     float xRotation = 0f;
 
@@ -29,7 +29,7 @@ public class PlayerRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
