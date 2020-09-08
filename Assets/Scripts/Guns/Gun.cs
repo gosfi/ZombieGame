@@ -5,10 +5,12 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public int nbOfBullets, maxBullets;
-    public float range, dmg;
+    public float range, dmg, aimSpeed, fireRate;
     public bool CanShoot;
 
     public Camera fpsCam;
+
+    public float nextTimeToFire;
 
     public void Shoot()
     {
@@ -32,7 +34,7 @@ public class Gun : MonoBehaviour
         CanShoot = true;
     }
 
-    public void Aim()
+    public virtual void Aim(bool isAiming)
     {
 
     }

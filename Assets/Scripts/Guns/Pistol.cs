@@ -13,14 +13,17 @@ public class Pistol : Gun
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && CanShoot)
+        if (Input.GetButton("Fire1") && CanShoot && Time.time >= nextTimeToFire)
         {
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
         }
+        
     }
+
 
 }
