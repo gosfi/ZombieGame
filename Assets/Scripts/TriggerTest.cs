@@ -5,22 +5,16 @@ using UnityEngine.UI;
 
 public class TriggerTest : MonoBehaviour
 {
-    public GameObject reviveText;
     Color oldColor = Color.white;
+    
 
-    bool canRevive = false;
-    float reviveTime = 0f;
+
+    public PlayerSettings player;
 
     private void OnTriggerEnter(Collider other)
     {
-
-
-
-        reviveText.SetActive(true);
-        canRevive = true;
-
-      
-
+        player.reviveText.SetActive(true);
+        player.canRevive = true;
 
         Renderer render = GetComponent<Renderer>();
 
@@ -30,44 +24,10 @@ public class TriggerTest : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
-
-        reviveText.SetActive(false);
-        canRevive = false;
-        
-
-
+        player.reviveText.SetActive(false);
+        player.canRevive = false;
 
         Renderer render = GetComponent<Renderer>();
         render.material.color = oldColor;
-    }
-
-    private void Update()
-    {
-        Debug.Log("Revive time : " + reviveTime);
-        if (Input.GetKey(KeyCode.F) && canRevive)
-        {
-            reviveTime += 2 * Time.deltaTime;
-
-            
-        }
-        else
-        {
-            reviveTime -= Time.deltaTime;
-            
-        }
-
-        if(reviveTime <= 0)
-        {
-            reviveTime = 0;
-        }
-
-        if (reviveTime >= 10f)
-        {
-            canRevive = false;
-            reviveTime = 0f;
-
-            Debug.Log("Player has revived!");
-        }
     }
 }

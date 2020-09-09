@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class PlayerSettings : MonoBehaviour
 {
-    
+
 
     public float updateHp = 100f;
+    public bool canRevive = false;
+
 
     float maxHp = 100f;
     float regenPoint = 20f;
-    public bool isHit = false;
+    float reviveTime = 0f;
+    float regenTime = 10f;
+    float downTime = 10f;
     bool isDead = false;
     bool startTime = false;
+    bool isDown = false;
     int receiveDamage = 10;
-    float waitTime = 5f;
+
+
+
+
+
+    public bool isHit = false;
 
     public GameObject player;
+    public GameObject reviveZone;
+    public GameObject reviveText;
+
 
     void Start()
     {
@@ -25,10 +38,24 @@ public class PlayerSettings : MonoBehaviour
 
     void Update()
     {
-        Regen();
+        Debug.Log("isDown : " + isDown);
+
         Hit();
+        Regen();
+        Down();
+        Revive();
         Dead();
         Test();
+
+        Debug.Log("HP : " + updateHp);
+    }
+
+    void Hit()
+    {
+        if (isHit)
+        {
+            updateHp -= receiveDamage;
+        }
     }
 
     void Regen()
@@ -37,14 +64,22 @@ public class PlayerSettings : MonoBehaviour
         if (isHit)
         {
             startTime = true;
+            isHit = false;
         }
+
+        if (updateHp <= 0)
+        {
+            startTime = false;
+            regenTime = 10f;
+        }
+
 
         if (startTime)
         {
-            waitTime -= Time.deltaTime;
+            regenTime -= Time.deltaTime;
         }
 
-        if (waitTime <= 0)
+        if (regenTime <= 0)
         {
             updateHp += regenPoint * Time.deltaTime;
 
@@ -52,42 +87,90 @@ public class PlayerSettings : MonoBehaviour
             {
                 updateHp = 100f;
                 startTime = false;
-                waitTime = 5f;
-            }
-            if (updateHp < 0)
-            {
-                updateHp = 0;
+                regenTime = 10f;
             }
         }
-        
-       
+
+        if (updateHp <= 0 && !isDead)
+        {
+            updateHp = 0;
+            isDown = true;
+
+        }
     }
 
-    void Hit()
+    void Down()
     {
-        if (isHit)
+
+
+        if (isDown)
         {
-            updateHp -= receiveDamage;
-            isHit = false;
+            reviveZone.SetActive(true);
+            downTime -= Time.deltaTime;
+            Debug.Log("Down time remaining : " + downTime);
+            canRevive = true;
+        }
+
+        if (downTime <= 0)
+        {
+            reviveZone.SetActive(false);
+            reviveText.SetActive(false);
+            canRevive = false;
+            downTime = 10f;
+            isDead = true;
+            isDown = false;
+        }
+    }
+
+    void Revive()
+    {
+        Debug.Log("Revive time : " + reviveTime);
+        if (Input.GetKey(KeyCode.F) && canRevive)
+        {
+            reviveTime += 2 * Time.deltaTime;
+
+
+        }
+        else
+        {
+            reviveTime -= Time.deltaTime;
+
+        }
+
+        if (reviveTime <= 0)
+        {
+            reviveTime = 0;
+        }
+
+        if (reviveTime >= 10f)
+        {
+            canRevive = false;
+            reviveZone.SetActive(false);
+            reviveText.SetActive(false);
+            isDown = false;
+            reviveTime = 0f;
+            updateHp = 50f;
+            isHit = true;
+            downTime = 10f;
+
+
+            Debug.Log("Player has revived!");
         }
     }
 
     void Dead()
     {
-        if (updateHp <= 0)
+        
+        if (isDead)
         {
-            updateHp = 0;
-            isDead = true;
+            Destroy(player);
         }
-        // if (isDead)
-        // {
-        //     Destroy(player);
-        // }
+
     }
 
     void Test()
     {
-        Debug.Log("Player HP : " + updateHp);
+        //  Debug.Log("Player HP : " + updateHp);
 
         //if (!isDead)
         //{
@@ -98,5 +181,9 @@ public class PlayerSettings : MonoBehaviour
         //    Debug.Log("Player is dead : " + isDead);
         //}
     }
+
+
+
+
 
 }
