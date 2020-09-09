@@ -8,6 +8,7 @@ public class Pistol : Gun
 
     private void OnEnable()
     {
+        source = GetComponent<AudioSource>();
         CanShoot = true;
     }
 
@@ -24,7 +25,7 @@ public class Pistol : Gun
         }
 
         Aim(Input.GetButton("Fire2"));
-        
+
     }
 
 

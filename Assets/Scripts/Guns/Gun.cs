@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.Audio;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -14,10 +13,18 @@ public class Gun : MonoBehaviour
 
     public float nextTimeToFire;
 
+    [HideInInspector]
+    public AudioSource source;
+
     public void Shoot()
     {
         RaycastHit hit;
         nbOfBullets--;
+
+        if (source.clip != null)
+        {
+            source.Play();
+        }
 
         if (nbOfBullets <= 0)
         {
