@@ -9,9 +9,15 @@ public class PlayerRotation : MonoBehaviour
     public Transform player;
     float xRotation = 0f;
 
+    void Start()
+    {
+      //  Cursor.lockState = CursorLockMode.Locked;
+    }
 
-
-
+    void Update()
+    {
+        RotatePlayer();
+    }
 
     void RotatePlayer()
     {
@@ -23,19 +29,5 @@ public class PlayerRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         player.Rotate(Vector3.up * mouseX);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        RotatePlayer();
-
     }
 }

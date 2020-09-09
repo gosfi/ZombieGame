@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
+    const float WALK_SPEED = 10f;
+    const float RUN_SPEED = 20f;
+
+    public float speed = WALK_SPEED;
     public CharacterController controller;
     public float gravity = -9.81f;
     public Transform groundCheck;
@@ -14,6 +17,13 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    void Update()
+    {
+        Move();
+        Run();
+        Gravity();
+        CheckGround();
+    }
 
     void Move()
     {
@@ -23,9 +33,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * posX + transform.forward * posZ;
 
         controller.Move(move * speed * Time.deltaTime);
+    }
 
-       
-
+    void Run()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = RUN_SPEED;
+        }
+        else
+        {
+            speed = WALK_SPEED;
+        }
     }
 
     void Gravity()
@@ -38,23 +57,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Move();
-        Gravity();
-        CheckGround();
     }
 }
