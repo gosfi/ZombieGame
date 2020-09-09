@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public PlayerSettings playerSet;
 
     Vector3 velocity;
     bool isGrounded;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
-        Run();
+        Speed();
         Gravity();
         CheckGround();
     }
@@ -35,9 +36,9 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
     }
 
-    void Run()
+    void Speed()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !playerSet.isDown)
         {
             speed = RUN_SPEED;
         }
@@ -45,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = WALK_SPEED;
         }
+
+        if (playerSet.isDown)
+        {
+            speed /= WALK_SPEED;
+        }
+
     }
 
     void Gravity()

@@ -8,6 +8,8 @@ public class PlayerSettings : MonoBehaviour
 
     public float updateHp = 100f;
     public bool canRevive = false;
+    public bool isDown = false;
+
 
 
     float maxHp = 100f;
@@ -17,7 +19,6 @@ public class PlayerSettings : MonoBehaviour
     float downTime = 10f;
     bool isDead = false;
     bool startTime = false;
-    bool isDown = false;
     int receiveDamage = 10;
 
 
@@ -160,7 +161,7 @@ public class PlayerSettings : MonoBehaviour
 
     void Dead()
     {
-        
+
         if (isDead)
         {
             Destroy(player);
