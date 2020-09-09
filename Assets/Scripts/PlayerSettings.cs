@@ -30,6 +30,7 @@ public class PlayerSettings : MonoBehaviour
     public GameObject player;
     public GameObject reviveZone;
     public GameObject reviveText;
+    public GameObject cameraSpectate;
 
 
     void Start()
@@ -165,6 +166,7 @@ public class PlayerSettings : MonoBehaviour
         if (isDead)
         {
             Destroy(player);
+            cameraSpectate.SetActive(true);
         }
 
     }
