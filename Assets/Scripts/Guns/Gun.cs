@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour
 
     public float nextTimeToFire;
 
+    public ParticleSystem[] particles;
+
     [HideInInspector]
     public AudioSource source;
 

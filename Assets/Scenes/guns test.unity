@@ -538,6 +538,10 @@ MonoBehaviour:
   HipFire: {x: 0.25, y: -0.15, z: 0.7}
   fpsCam: {fileID: 1833176049}
   nextTimeToFire: 0
+  particles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   source: {fileID: 0}
 --- !u!82 &581102865
 AudioSource:
