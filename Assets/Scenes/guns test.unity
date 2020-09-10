@@ -608,16 +608,6 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 1833176049}
-    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
-        type: 3}
-      propertyPath: AimDownSight.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
-        type: 3}
-      propertyPath: HipFire.y
-      value: -0.15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f48adbf93b53074099eebba90d5634a, type: 3}
 --- !u!1 &1833176047
