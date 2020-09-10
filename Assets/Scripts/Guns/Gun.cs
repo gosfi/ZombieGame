@@ -13,19 +13,20 @@ public class Gun : MonoBehaviour
 
     public float nextTimeToFire;
 
-    public ParticleSystem[] particles;
-
     [HideInInspector]
     public AudioSource source;
 
+
+   
     public void Shoot()
     {
         RaycastHit hit;
         nbOfBullets--;
 
+
         if (source.clip != null)
         {
-            source.Play();
+            source.Play(); 
         }
 
         if (nbOfBullets <= 0)

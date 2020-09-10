@@ -8,6 +8,7 @@ public class ShotGun : Gun
 
     private void OnEnable()
     {
+        
         source = GetComponent<AudioSource>();
         CanShoot = true;
     }
