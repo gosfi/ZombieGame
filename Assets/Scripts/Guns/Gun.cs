@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    #region Variables
     public int nbOfBullets, maxBullets;
     public float range, dmg, aimSpeed, fireRate;
     public bool CanShoot;
@@ -17,34 +18,40 @@ public class Gun : MonoBehaviour
     public AudioSource source;
 
     MuzzleFlash muzzleFlash;
+    #endregion
 
-
-    private void Start() {
+    private void Start()
+    {
+        //Get the muzzleflash component int the gun object
         muzzleFlash = GetComponent<MuzzleFlash>();
     }
-   
+
     public void Shoot()
     {
+        //create a new RaycastHit object and reduces the numbers of bullet when shooting
         RaycastHit hit;
         nbOfBullets--;
 
-
+        //Check if the audio source clip is not null, if it isn't null play the clip
         if (source.clip != null)
         {
-            source.Play(); 
+            source.Play();
         }
+
+        //if the number of bullets is less or equal to 0, the player can't shoot
 
         if (nbOfBullets <= 0)
         {
             CanShoot = false;
         }
-        
+
+        //set active the muzzle flash object, check MuzzleFlash.cs for more infos
         muzzleFlash.Activate();
 
-        muzzleFlash.Activate();
-
+        //shoot a raycast from the middle of the camera, check if it hit something
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            //TODO: replace logging the name of what you hit to giving it damage and adding force to give an impression of power to the player
             Debug.Log(hit.transform.name);
         }
 
@@ -52,16 +59,19 @@ public class Gun : MonoBehaviour
 
     public void Reload()
     {
+        //put all the ammo back to the gun and make the player able to shoot again
         nbOfBullets = maxBullets;
         CanShoot = true;
     }
 
-    public virtual void Aim(bool isAiming)
+    public void Aim(bool isAiming)
     {
+        // if the player is clicking the aim button, lerp between current position and the Vector 3 assigned in the editor for the aiming position
         if (isAiming)
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, AimDownSight, 15 * Time.deltaTime);
         }
+        //if the player isn't clicking the aiming button, lerp between aiming position and the hip position assigned in the editor
         else
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, HipFire, 15 * Time.deltaTime);
