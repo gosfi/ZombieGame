@@ -14,18 +14,20 @@ public class PlayerSettings : MonoBehaviour
     public bool isDown = false;
     public bool isHit = false;
     public float downTime = DOWN_TIME;
+    public float reviveTime = 0f;
 
     public GameObject player;
     public GameObject reviveZone;
     public GameObject reviveText;
     public GameObject cameraSpectate;
+    public GameObject playerDownTime;
+    public GameObject playerReviveTime;
 
     float regenPoint = 20f;
-    float reviveTime = 0f;
-    float regenTime = REGEN_TIME;
     bool isDead = false;
     bool startTime = false;
     int receiveDamage = 10;
+    float regenTime = REGEN_TIME;
 
 
 
@@ -108,6 +110,8 @@ public class PlayerSettings : MonoBehaviour
         if (isDown)
         {
             reviveZone.SetActive(true);
+            playerDownTime.SetActive(true);
+            playerReviveTime.SetActive(true);
             downTime -= Time.deltaTime;
             canRevive = true;
         }
@@ -116,6 +120,7 @@ public class PlayerSettings : MonoBehaviour
         {
             reviveZone.SetActive(false);
             reviveText.SetActive(false);
+            playerDownTime.SetActive(false);
             canRevive = false;
             downTime = DOWN_TIME;
             isDead = true;
@@ -147,6 +152,8 @@ public class PlayerSettings : MonoBehaviour
             canRevive = false;
             reviveZone.SetActive(false);
             reviveText.SetActive(false);
+            playerDownTime.SetActive(false);
+            playerReviveTime.SetActive(false);
             isDown = false;
             reviveTime = 0f;
             updateHp = 50f;
