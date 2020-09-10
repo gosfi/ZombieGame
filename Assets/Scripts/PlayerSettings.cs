@@ -13,6 +13,7 @@ public class PlayerSettings : MonoBehaviour
     public bool canRevive = false;
     public bool isDown = false;
     public bool isHit = false;
+    public float downTime = DOWN_TIME;
 
     public GameObject player;
     public GameObject reviveZone;
@@ -22,7 +23,6 @@ public class PlayerSettings : MonoBehaviour
     float regenPoint = 20f;
     float reviveTime = 0f;
     float regenTime = REGEN_TIME;
-    float downTime = DOWN_TIME;
     bool isDead = false;
     bool startTime = false;
     int receiveDamage = 10;
