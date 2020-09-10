@@ -307,18 +307,6 @@ Transform:
   m_Father: {fileID: 1770304726}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &199211193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5810692023303889805, guid: 7762ec3372f981c40b3457330ce2172c,
-    type: 3}
-  m_PrefabInstance: {fileID: 9031884814250211622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &281164460 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7314452910502156021, guid: 7762ec3372f981c40b3457330ce2172c,
-    type: 3}
-  m_PrefabInstance: {fileID: 9031884814250211622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &305104796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1201,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1481940109 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9031884815135248820, guid: 7762ec3372f981c40b3457330ce2172c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9031884814250211622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574952632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,12 +1650,25 @@ Transform:
   m_Father: {fileID: 1770304726}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1802590793 stripped
+--- !u!1 &2110524163 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5728872355594973458, guid: 7762ec3372f981c40b3457330ce2172c,
+  m_CorrespondingSourceObject: {fileID: 6111054324042772017, guid: 7762ec3372f981c40b3457330ce2172c,
     type: 3}
   m_PrefabInstance: {fileID: 9031884814250211622}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110524168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110524163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83287ddd24f00f41a5b08805e8066a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1481940109}
 --- !u!1 &2132421133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,12 +1781,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8388821839645879683, guid: 7762ec3372f981c40b3457330ce2172c,
+    - target: {fileID: 1414534939, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682920897185625125, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
-      propertyPath: pistol
-      value: 
-      objectReference: {fileID: 199211193}
-    - target: {fileID: 8388821839645879683, guid: 7762ec3372f981c40b3457330ce2172c,
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682920897185625125, guid: 7762ec3372f981c40b3457330ce2172c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031884815194441826, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: shotgun
       value: 
