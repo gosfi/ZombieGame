@@ -18,11 +18,11 @@ public class Gun : MonoBehaviour
 
     MuzzleFlash muzzleFlash;
 
-    void Start()
-    {
+
+    private void Start() {
         muzzleFlash = GetComponent<MuzzleFlash>();
     }
-
+   
     public void Shoot()
     {
         RaycastHit hit;
@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
 
         if (source.clip != null)
         {
-            source.Play();
+            source.Play(); 
         }
 
         if (nbOfBullets <= 0)
@@ -39,6 +39,8 @@ public class Gun : MonoBehaviour
             CanShoot = false;
         }
         
+        muzzleFlash.Activate();
+
         muzzleFlash.Activate();
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
