@@ -16,7 +16,12 @@ public class Gun : MonoBehaviour
     [HideInInspector]
     public AudioSource source;
 
+    MuzzleFlash muzzleFlash;
 
+
+    private void Start() {
+        muzzleFlash = GetComponent<MuzzleFlash>();
+    }
    
     public void Shoot()
     {
@@ -33,6 +38,8 @@ public class Gun : MonoBehaviour
         {
             CanShoot = false;
         }
+
+        muzzleFlash.Activate();
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
