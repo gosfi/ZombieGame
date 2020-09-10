@@ -6,9 +6,11 @@ public class PlayerInventory : MonoBehaviour
 {
     public GameObject slot1;
     public GameObject slot2;
+    public GameObject slot3;
 
     public GameObject pistol;
     public GameObject shotgun;
+    public GameObject ak_47;
 
 
     void Select()
@@ -20,6 +22,9 @@ public class PlayerInventory : MonoBehaviour
 
             slot2.SetActive(false);
             shotgun.SetActive(false);
+
+            slot3.SetActive(false);
+            ak_47.SetActive(false);
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
@@ -28,6 +33,20 @@ public class PlayerInventory : MonoBehaviour
 
             slot2.SetActive(true);
             shotgun.SetActive(true);
+
+            slot3.SetActive(false);
+            ak_47.SetActive(false);
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            slot1.SetActive(false);
+            pistol.SetActive(false);
+
+            slot2.SetActive(false);
+            shotgun.SetActive(false);
+
+            slot3.SetActive(true);
+            ak_47.SetActive(true);
         }
     }
 
