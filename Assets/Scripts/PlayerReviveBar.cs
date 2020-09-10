@@ -17,6 +17,7 @@ public class PlayerReviveBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (slider.value <= slider.minValue)
         {
             fillImage.enabled = false;
@@ -28,6 +29,9 @@ public class PlayerReviveBar : MonoBehaviour
         }
 
         float fillValue = pSettings.reviveTime;
+
+
+
 
         slider.value = fillValue;
 

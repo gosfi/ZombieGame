@@ -1201,6 +1201,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1481940109 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9031884815135248820, guid: 7762ec3372f981c40b3457330ce2172c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9031884814250211622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574952632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,6 +1650,25 @@ Transform:
   m_Father: {fileID: 1770304726}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2110524163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6111054324042772017, guid: 7762ec3372f981c40b3457330ce2172c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9031884814250211622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110524168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110524163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83287ddd24f00f41a5b08805e8066a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1481940109}
 --- !u!1 &2132421133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,74 +1781,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1652043444, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
-      propertyPath: m_Name
-      value: ShotgunTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 1741660511, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
-      propertyPath: m_Name
-      value: PistolTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 838710795340814673, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_MaxValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 838710795340814673, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239181187091394204, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_Name
-      value: Ak_47Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 2074453253278029479, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2074453253278029479, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116041036489408882, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
+    - target: {fileID: 1414534939, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7796086144716529476, guid: 7762ec3372f981c40b3457330ce2172c,
+    - target: {fileID: 8682920897185625125, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
-      propertyPath: m_Color.r
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7796086144716529476, guid: 7762ec3372f981c40b3457330ce2172c,
+    - target: {fileID: 8682920897185625125, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7796086144716529476, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.03644657
+      propertyPath: m_AnchoredPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9031884815194441826, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: cameraSpectate
       value: 
       objectReference: {fileID: 1421175323}
-    - target: {fileID: 9031884815194441826, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: playerRegenTime
-      value: 
-      objectReference: {fileID: 9031884814250211623}
-    - target: {fileID: 9031884815194441826, guid: 7762ec3372f981c40b3457330ce2172c,
-        type: 3}
-      propertyPath: playerReviveTime
-      value: 
-      objectReference: {fileID: 9031884814250211623}
     - target: {fileID: 9031884815194441830, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: m_Name
@@ -1886,9 +1862,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
---- !u!1 &9031884814250211623 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4116041036489408882, guid: 7762ec3372f981c40b3457330ce2172c,
-    type: 3}
-  m_PrefabInstance: {fileID: 9031884814250211622}
-  m_PrefabAsset: {fileID: 0}

@@ -22,6 +22,7 @@ public class PlayerSettings : MonoBehaviour
     public GameObject cameraSpectate;
     public GameObject playerDownTime;
     public GameObject playerReviveTime;
+    public GameObject playerReviveCircle;
 
     float regenPoint = 20f;
     bool isDead = false;
@@ -112,6 +113,7 @@ public class PlayerSettings : MonoBehaviour
             reviveZone.SetActive(true);
             playerDownTime.SetActive(true);
             playerReviveTime.SetActive(true);
+            playerReviveCircle.SetActive(true);
             downTime -= Time.deltaTime;
             canRevive = true;
         }
@@ -154,6 +156,7 @@ public class PlayerSettings : MonoBehaviour
             reviveText.SetActive(false);
             playerDownTime.SetActive(false);
             playerReviveTime.SetActive(false);
+            playerReviveCircle.SetActive(false);
             isDown = false;
             reviveTime = 0f;
             updateHp = 50f;
