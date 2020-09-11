@@ -15,79 +15,50 @@ public class PlayerInventory : MonoBehaviour
 
     void Select()
     {
-        /* if (Input.GetKey(KeyCode.Alpha1))
-         {
-             slot1.SetActive(true);
-             slot2.SetActive(false);
-             slot3.SetActive(false);
-
-             guns[0].SetActive(true);
-             guns[1].SetActive(false);
-             guns[2].SetActive(false);
-
-         }
-         if (Input.GetKey(KeyCode.Alpha2))
-         {
-             slot1.SetActive(false);
-             slot2.SetActive(true);
-             slot3.SetActive(false);
-
-             guns[0].SetActive(false);
-             guns[1].SetActive(true);
-             guns[2].SetActive(false);
-         }
-         if (Input.GetKey(KeyCode.Alpha3))
-         {
-             /* slot1.SetActive(false);
-              pistol.SetActive(false);
-
-              slot2.SetActive(false);
-              shotgun.SetActive(false);
-
-              slot3.SetActive(true);
-              ak_47.SetActive(true)
-
-             guns[0].SetActive(false);
-             guns[1].SetActive(false);
-             guns[2].SetActive(true);
-         }*/
-
-        if (Input.GetAxis("Mouse ScrollWheel") >= 0.1f)
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            index++;
+            index = 0;
+            slot1.SetActive(true);
+            slot2.SetActive(false);
+            slot3.SetActive(false);
 
-            if (index > guns.Length)
+            for (int i = 0; i < guns.Length; i++)
             {
-                index = 0;
+                guns[i].SetActive(false);
             }
+            guns[index].SetActive(true);
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            index = 1;
+            slot1.SetActive(false);
+            slot2.SetActive(true);
+            slot3.SetActive(false);
 
-
-            if (index == 0)
+            for (int i = 0; i < guns.Length; i++)
             {
-                guns[index].SetActive(true);
-                guns[index + 1].SetActive(false);
-                guns[guns.Length].SetActive(false);
+                guns[i].SetActive(false);
             }
-            else if (index == guns.Length)
-            {
-                guns[index].SetActive(true);
-                guns[index - 1].SetActive(false);
-                guns[0].SetActive(false);
-            }
-            else
-            {
-                guns[index].SetActive(true);
-                guns[index + 1].SetActive(false);
-                guns[index - 1].SetActive(false);
-            }
+            guns[index].SetActive(true);
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            index = 2;
+            slot1.SetActive(false);
+            slot2.SetActive(false);
+            slot3.SetActive(true);
 
-
+            for (int i = 0; i < guns.Length; i++)
+            {
+                guns[i].SetActive(false);
+            }
+            guns[index].SetActive(true);
         }
     }
 
     private void Update()
     {
         Select();
-        Debug.Log(guns.Length);
+        Debug.Log(index);
     }
 }
