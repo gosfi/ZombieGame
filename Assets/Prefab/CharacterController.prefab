@@ -2697,7 +2697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e67d4a065380347a74674dd5c8e032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 100
   controller: {fileID: 9031884815194441828}
   gravity: -9.81
   groundCheck: {fileID: 9031884814212663985}
@@ -2747,9 +2747,9 @@ MonoBehaviour:
   slot1: {fileID: 1642385613}
   slot2: {fileID: 245118964}
   slot3: {fileID: 8023226708404507829}
-  pistol: {fileID: 0}
-  shotgun: {fileID: 0}
-  ak_47: {fileID: 0}
+  pistol: {fileID: 5810692023303889805}
+  shotgun: {fileID: 5728872355594973458}
+  ak_47: {fileID: 7314452910502156021}
 --- !u!1 &9031884815274699653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2851,16 @@ PrefabInstance:
       propertyPath: HipFire.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5362187526608088232, guid: a490dd8317887b24993b92fd52472fb8,
+        type: 3}
+      propertyPath: AimDownSight.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362187526608088232, guid: a490dd8317887b24993b92fd52472fb8,
+        type: 3}
+      propertyPath: HipFire.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5362187526608088246, guid: a490dd8317887b24993b92fd52472fb8,
         type: 3}
       propertyPath: m_Name
@@ -2921,6 +2931,12 @@ PrefabInstance:
 --- !u!4 &5728872355594973459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5362187526608088247, guid: a490dd8317887b24993b92fd52472fb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 426533720787934628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5728872355594973458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362187526608088246, guid: a490dd8317887b24993b92fd52472fb8,
     type: 3}
   m_PrefabInstance: {fileID: 426533720787934628}
   m_PrefabAsset: {fileID: 0}
@@ -3004,15 +3020,21 @@ PrefabInstance:
     - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
       propertyPath: AimDownSight.y
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
       propertyPath: HipFire.y
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f48adbf93b53074099eebba90d5634a, type: 3}
+--- !u!1 &5810692023303889805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8646171690757811235, guid: 5f48adbf93b53074099eebba90d5634a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2836958580120293294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5810692023303889814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8646171690757811256, guid: 5f48adbf93b53074099eebba90d5634a,
@@ -3030,6 +3052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MachineGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362993210331722597, guid: be63566d4dc004e4f89f6d410bdc4b2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362993210331722598, guid: be63566d4dc004e4f89f6d410bdc4b2d,
         type: 3}
@@ -3111,6 +3138,12 @@ PrefabInstance:
 --- !u!4 &7314452910502156022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1362993210331722598, guid: be63566d4dc004e4f89f6d410bdc4b2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8604262539915355536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7314452910502156021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362993210331722597, guid: be63566d4dc004e4f89f6d410bdc4b2d,
     type: 3}
   m_PrefabInstance: {fileID: 8604262539915355536}
   m_PrefabAsset: {fileID: 0}

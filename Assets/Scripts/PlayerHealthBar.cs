@@ -17,23 +17,30 @@ public class PlayerHealthBar : MonoBehaviour
     private void Update()
     {
 
-        if(slider.value <= slider.minValue)
+        if (slider.value <= slider.minValue)
         {
             fillImage.enabled = false;
         }
 
-        if(slider.value > slider.minValue && !fillImage.enabled)
+        if (slider.value > slider.minValue && !fillImage.enabled)
         {
             fillImage.enabled = true;
         }
-        
+
+        UpdateHpBar();
+
+    }
+
+
+    private void UpdateHpBar()
+    {
         float fillValue = pSettings.updateHp;
 
-        if(fillValue <= slider.maxValue / 4)
+        if (fillValue <= slider.maxValue / 4)
         {
             fillImage.color = Color.red;
         }
-        else if(fillValue <= slider.maxValue / 2)
+        else if (fillValue <= slider.maxValue / 2)
         {
             fillImage.color = Color.yellow;
         }
@@ -41,7 +48,7 @@ public class PlayerHealthBar : MonoBehaviour
         {
             fillImage.color = Color.cyan;
         }
-        else if(fillValue > slider.maxValue / 4 && fillValue > slider.maxValue / 2 && fillValue > slider.maxValue / 1.5)
+        else
         {
             fillImage.color = Color.white;
         }
