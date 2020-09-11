@@ -18,11 +18,17 @@ public class Gun : MonoBehaviour
 
     MuzzleFlash muzzleFlash;
 
+    private Quaternion targetRotation, originRotation;
 
-    private void Start() {
+    public float intensity, smooth;
+
+
+    private void Start()
+    {
         muzzleFlash = GetComponent<MuzzleFlash>();
+        originRotation = transform.rotation;
     }
-   
+
     public void Shoot()
     {
         RaycastHit hit;
@@ -31,7 +37,7 @@ public class Gun : MonoBehaviour
 
         if (source.clip != null)
         {
-            source.Play(); 
+            source.Play();
         }
 
         if (nbOfBullets <= 0)
@@ -63,5 +69,18 @@ public class Gun : MonoBehaviour
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, HipFire, 15 * Time.deltaTime);
         }
+    }
+
+    public void UpdateSway()
+    {
+        float t_x_mouse = Input.GetAxis("Mouse X");
+        float t_y_mouse = Input.GetAxis("Mouse Y");
+
+        //calculate adjustment
+        Quaternion t_x_adj = Quaternion.AngleAxis(intensity * t_x_mouse, Vector3.up);
+        Quaternion t_y_adj = Quaternion.AngleAxis(intensity * t_y_mouse, Vector3.right);
+        targetRotation = t_x_adj * t_y_adj * originRotation;
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * smooth);
     }
 }

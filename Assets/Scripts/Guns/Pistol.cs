@@ -27,7 +27,8 @@ public class Pistol : Gun
 
         Aim(Input.GetButton("Fire2"));
 
-    }
+        UpdateSway();
 
+    }
 
 }

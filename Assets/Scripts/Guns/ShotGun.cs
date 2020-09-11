@@ -26,5 +26,7 @@ public class ShotGun : Gun
         }
 
         Aim(Input.GetButton("Fire2"));
+
+        UpdateSway();
     }
 }
