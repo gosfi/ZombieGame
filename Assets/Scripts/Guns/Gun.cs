@@ -26,7 +26,7 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         muzzleFlash = GetComponent<MuzzleFlash>();
-        originRotation = transform.rotation;
+        originRotation = transform.localRotation;
     }
 
     public void Shoot()
@@ -81,6 +81,6 @@ public class Gun : MonoBehaviour
         Quaternion t_y_adj = Quaternion.AngleAxis(intensity * t_y_mouse, Vector3.right);
         targetRotation = t_x_adj * t_y_adj * originRotation;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * smooth);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * smooth);
     }
 }
