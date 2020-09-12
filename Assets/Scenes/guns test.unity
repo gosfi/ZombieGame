@@ -806,13 +806,8 @@ PrefabInstance:
       objectReference: {fileID: 1833176049}
     - target: {fileID: 1362993210331722599, guid: be63566d4dc004e4f89f6d410bdc4b2d,
         type: 3}
-      propertyPath: intensity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1362993210331722599, guid: be63566d4dc004e4f89f6d410bdc4b2d,
-        type: 3}
-      propertyPath: smooth
-      value: 10
+      propertyPath: aimSpeed
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be63566d4dc004e4f89f6d410bdc4b2d, type: 3}
