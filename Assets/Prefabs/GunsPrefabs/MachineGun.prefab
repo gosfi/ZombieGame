@@ -130,7 +130,7 @@ MonoBehaviour:
   maxBullets: 30
   range: 100
   dmg: 25
-  aimSpeed: 5
+  aimSpeed: 1
   fireRate: 10
   CanShoot: 0
   AimDownSight: {x: 0, y: -0.15, z: 0.5}
@@ -138,6 +138,8 @@ MonoBehaviour:
   fpsCam: {fileID: 0}
   nextTimeToFire: 0
   source: {fileID: 0}
+  intensity: 5
+  smooth: 10
 --- !u!82 &1362993210331722592
 AudioSource:
   m_ObjectHideFlags: 0
