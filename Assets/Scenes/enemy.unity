@@ -266,7 +266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c648a14d50c93642b87a7bdeb8fa096, type: 2}
+  - {fileID: 2100000, guid: d0f5a446a07e9434cb0b544995c6c4b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 335049172}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,7 +557,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: adaf1c2d9a1656847a89f4442d9da299, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -612,9 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619bd06777abc8d49ad6b96fe2d69bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHit: 0
   zombie: {fileID: 335049165}
-  gun: {fileID: 2117536051}
 --- !u!1 &378122241
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +808,11 @@ PrefabInstance:
       propertyPath: zombie
       value: 
       objectReference: {fileID: 335049172}
+    - target: {fileID: 7314452910502156023, guid: 7762ec3372f981c40b3457330ce2172c,
+        type: 3}
+      propertyPath: dmg
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8388821839645879683, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: pistol
@@ -885,6 +888,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9031884815274699651, guid: 7762ec3372f981c40b3457330ce2172c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0f5a446a07e9434cb0b544995c6c4b2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
 --- !u!1 &906546953
@@ -1085,7 +1093,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0f5a446a07e9434cb0b544995c6c4b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1280,7 +1288,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c648a14d50c93642b87a7bdeb8fa096, type: 2}
+  - {fileID: 2100000, guid: eaf3e6bbf1ea3b3458422c841ec5ff0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1533,7 +1541,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eaf3e6bbf1ea3b3458422c841ec5ff0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1582,15 +1590,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 855944529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2117536051 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5728872355594973452, guid: 7762ec3372f981c40b3457330ce2172c,
-    type: 3}
-  m_PrefabInstance: {fileID: 855944529}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117536047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379ac54474ea45b48ac74826cc3236a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

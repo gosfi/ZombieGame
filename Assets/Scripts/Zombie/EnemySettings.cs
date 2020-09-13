@@ -4,46 +4,34 @@ using UnityEngine;
 
 public class EnemySettings : MonoBehaviour
 {
-    public bool isHit = false;
 
     float hp = 100f;
     float receiveDamage = 10f;
-    
-    bool isDead = false;
 
     public GameObject zombie;
-    public Gun gun;
 
-   
+
+
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log("Zombie HP : " + hp);
-        Hit();
-        Dead();
     }
 
-    void Hit()
+    public void Hit(float dmg)
     {
-        if (isHit)
+
+        hp -= dmg;
+
+        if (hp <= 0)
         {
-            hp -= gun.dmg;
-            isHit = false;
-        }
-        if(hp <= 0)
-        {
-            isDead = true;
+            Dead();
         }
     }
 
     void Dead()
     {
-
-        if (isDead)
-        {
-            Destroy(zombie);  
-        }
-
+        Destroy(zombie);
     }
 }

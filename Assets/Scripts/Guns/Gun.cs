@@ -53,14 +53,12 @@ public class Gun : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            rayCastName = hit.transform.name;
-            Debug.Log(rayCastName);
+            if(hit.transform.CompareTag("Zombie")){
+                zombie.Hit(dmg);
+            }
         }
 
-        if(rayCastName == "Zombie")
-        {
-            zombie.isHit = true;
-        }
+       
     }
 
     public void Reload()

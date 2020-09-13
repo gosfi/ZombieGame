@@ -10,6 +10,6 @@ public class TestEnemy : MonoBehaviour
 
     public void Hit()
     {
-        zombie.isHit = true;
+       // zombie.isHit = true;
     }
 }
