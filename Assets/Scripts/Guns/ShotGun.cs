@@ -31,5 +31,7 @@ public class ShotGun : Gun
 
         //check if the player has clicked on the aiming button, play the aim method in Gun.cs
         Aim(Input.GetButton("Fire2"));
+
+        UpdateSway();
     }
 }
