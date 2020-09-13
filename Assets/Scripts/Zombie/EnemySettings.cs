@@ -12,7 +12,7 @@ public class EnemySettings : MonoBehaviour
     bool isDead = false;
 
     public GameObject zombie;
-    private Gun gun;
+    public Gun gun;
 
    
 

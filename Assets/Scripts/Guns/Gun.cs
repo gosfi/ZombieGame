@@ -22,6 +22,10 @@ public class Gun : MonoBehaviour
 
     public float intensity, smooth;
 
+    string rayCastName;
+
+    public EnemySettings zombie;
+
 
     private void Start()
     {
@@ -49,7 +53,13 @@ public class Gun : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            rayCastName = hit.transform.name;
+            Debug.Log(rayCastName);
+        }
+
+        if(rayCastName == "Zombie")
+        {
+            zombie.isHit = true;
         }
     }
 

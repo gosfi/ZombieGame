@@ -39,7 +39,7 @@ public class PlayerSettings : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("startTime : " + startTime);
+       // Debug.Log("startTime : " + startTime);
 
         Hit();
         Regen();
