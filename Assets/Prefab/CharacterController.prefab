@@ -2071,6 +2071,7 @@ GameObject:
   - component: {fileID: 4530880325246341571}
   - component: {fileID: 1852457361253323376}
   - component: {fileID: 2110524168}
+  - component: {fileID: 773444518412832276}
   m_Layer: 5
   m_Name: Head Canvas
   m_TagString: Untagged
@@ -2159,6 +2160,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &2110524168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111054324042772017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83287ddd24f00f41a5b08805e8066a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 9031884815135248820}
+--- !u!114 &773444518412832276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2851,6 +2865,16 @@ PrefabInstance:
       propertyPath: HipFire.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5362187526608088232, guid: a490dd8317887b24993b92fd52472fb8,
+        type: 3}
+      propertyPath: intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362187526608088232, guid: a490dd8317887b24993b92fd52472fb8,
+        type: 3}
+      propertyPath: smooth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5362187526608088246, guid: a490dd8317887b24993b92fd52472fb8,
         type: 3}
       propertyPath: m_Name
@@ -2939,7 +2963,7 @@ PrefabInstance:
     - target: {fileID: 8646171690757811235, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8646171690757811256, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
@@ -3010,6 +3034,16 @@ PrefabInstance:
         type: 3}
       propertyPath: HipFire.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
+        type: 3}
+      propertyPath: intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
+        type: 3}
+      propertyPath: smooth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f48adbf93b53074099eebba90d5634a, type: 3}
@@ -3106,6 +3140,11 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 9031884815135248820}
+    - target: {fileID: 1362993210331722599, guid: be63566d4dc004e4f89f6d410bdc4b2d,
+        type: 3}
+      propertyPath: intensity
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be63566d4dc004e4f89f6d410bdc4b2d, type: 3}
 --- !u!4 &7314452910502156022 stripped
