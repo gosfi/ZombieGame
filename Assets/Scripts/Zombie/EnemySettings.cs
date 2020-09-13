@@ -12,6 +12,7 @@ public class EnemySettings : MonoBehaviour
     bool isDead = false;
 
     public GameObject zombie;
+    private Gun gun;
 
    
 
@@ -27,7 +28,7 @@ public class EnemySettings : MonoBehaviour
     {
         if (isHit)
         {
-            hp -= receiveDamage;
+            hp -= gun.dmg;
             isHit = false;
         }
         if(hp <= 0)
