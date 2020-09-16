@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySettings : MonoBehaviour
+public class Enemies : MonoBehaviour
 {
-
     float hp = 100f;
     float receiveDamage = 10f;
 
