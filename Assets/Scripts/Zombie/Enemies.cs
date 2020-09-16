@@ -30,7 +30,7 @@ public class Enemies : MonoBehaviour
     void Update()
     {
         Distance();
-        
+
 
 
     }
@@ -56,9 +56,9 @@ public class Enemies : MonoBehaviour
 
         foreach (Collider players in hitPlayer)
         {
-            
+
             PlayerMovement player = players.GetComponent<PlayerMovement>();
-            
+
             player.Hit(2);
             Debug.Log(players.name + "s'est fait hit");
         }
@@ -67,25 +67,39 @@ public class Enemies : MonoBehaviour
 
     void Distance()
     {
+
+
+
+
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
 
         foreach (Collider players in distancePlayer)
         {
             agent.speed = 0;
-
             hitTimer -= Time.deltaTime;
-
-            if(hitTimer <= 0)
+            if(hitTimer > 0)
             {
+                animator.SetTrigger("Idle");
+
+            }
+            else if(hitTimer <= 0)
+            {
+                //agent.speed = 3.3f;
                 Attack();
                 hitTimer = HIT_TIMER;
             }
+
+
             
+            
+            
+
+
         }
         Debug.Log("Player hit distance = " + isInDistance);
     }
 
-    
+
 
     private void OnDrawGizmosSelected()
     {
