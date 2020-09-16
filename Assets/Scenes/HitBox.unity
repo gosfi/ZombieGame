@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591228969018580, guid: d75d2f81c2ec2664f8be836c359b15a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 240.445
+      value: 240.331
       objectReference: {fileID: 0}
     - target: {fileID: 4591228969018580, guid: d75d2f81c2ec2664f8be836c359b15a2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -731,7 +731,7 @@ MonoBehaviour:
   zombie: {fileID: 850770352}
   animator: {fileID: 850770353}
   attackPoint: {fileID: 973451752}
-  attackRange: 0.53
+  attackRange: 0.5
   playerLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -759,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973451751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.476, y: 1.494, z: -0.13}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0.845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850770354}
@@ -848,3 +848,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2017845352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1720713490575138, guid: d75d2f81c2ec2664f8be836c359b15a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 849279672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2017845355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017845352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.8963289, z: 0}

@@ -24,7 +24,7 @@ public class Enemies : MonoBehaviour
             Attack();
         }
 
-        Debug.Log("Zombie HP : " + hp);
+       
     }
 
     public void Hit(float dmg)
@@ -44,9 +44,9 @@ public class Enemies : MonoBehaviour
 
         Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayers);
     
-        foreach(Collider player in hitPlayer)
+        foreach(Collider players in hitPlayer)
         {
-            Debug.Log(player.name + "s'est fait hit");
+            Debug.Log(players.name + "s'est fait hit");
         }
     
     }
