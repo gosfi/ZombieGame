@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
 
     string rayCastName;
 
-    public EnemySettings zombie;
+    public Enemies zombie;
 
 
     private void Start()

@@ -8,6 +8,10 @@ public class Enemies : MonoBehaviour
     float receiveDamage = 10f;
 
     public GameObject zombie;
+    public Animator animator;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask playerLayers;
 
 
 
@@ -15,6 +19,11 @@ public class Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Attack();
+        }
+
         Debug.Log("Zombie HP : " + hp);
     }
 
@@ -27,6 +36,29 @@ public class Enemies : MonoBehaviour
         {
             Dead();
         }
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+
+        Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayers);
+    
+        foreach(Collider player in hitPlayer)
+        {
+            Debug.Log(player.name + "s'est fait hit");
+        }
+    
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     void Dead()

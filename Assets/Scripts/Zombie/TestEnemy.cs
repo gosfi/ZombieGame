@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestEnemy : MonoBehaviour
 {
-    public EnemySettings zombie;
+    public Enemies zombie;
 
 
 
