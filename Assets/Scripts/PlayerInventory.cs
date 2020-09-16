@@ -15,43 +15,40 @@ public class PlayerInventory : MonoBehaviour
 
     void Select()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetAxis("Mouse ScrollWheel") >= 0.1f)
         {
-            index = 0;
-            slot1.SetActive(true);
-            slot2.SetActive(false);
-            slot3.SetActive(false);
+            if (index <= guns.Length - 1)
+            {
+                index++;
+            }
+            else
+            {
+                index = 0;
+            }
 
-            for (int i = 0; i < guns.Length; i++)
+            for (int i = 0; i < guns.Length; ++i)
             {
                 guns[i].SetActive(false);
             }
+
             guns[index].SetActive(true);
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
-            index = 1;
-            slot1.SetActive(false);
-            slot2.SetActive(true);
-            slot3.SetActive(false);
+            if (index >= 0)
+            {
+                index--;
+            }
+            else
+            {
+                index = 2;
+            }
 
-            for (int i = 0; i < guns.Length; i++)
+            for (int i = 0; i < guns.Length; ++i)
             {
                 guns[i].SetActive(false);
             }
-            guns[index].SetActive(true);
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            index = 2;
-            slot1.SetActive(false);
-            slot2.SetActive(false);
-            slot3.SetActive(true);
 
-            for (int i = 0; i < guns.Length; i++)
-            {
-                guns[i].SetActive(false);
-            }
             guns[index].SetActive(true);
         }
     }
@@ -59,6 +56,6 @@ public class PlayerInventory : MonoBehaviour
     private void Update()
     {
         Select();
-        Debug.Log(index);
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 }

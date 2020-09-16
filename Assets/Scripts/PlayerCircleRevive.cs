@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCircleRevive : MonoBehaviour
 {
-    public PlayerSettings pSettings;
+    private PlayerMovement pSettings;
     public Transform loadingBar;
     public Transform textLoading;
 
+
+    private void Start()
+    {
+        pSettings = GetComponent<PlayerMovement>();
+    }
 
 
     // Update is called once per frame

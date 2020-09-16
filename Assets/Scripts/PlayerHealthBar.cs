@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Player;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public PlayerSettings pSettings;
+    public PlayerMovement pSettings;
     public Image fillImage;
     private Slider slider;
 
