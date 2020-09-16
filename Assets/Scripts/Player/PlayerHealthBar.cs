@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Player;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public PlayerSettings pSettings;
+    public PlayerMovement pSettings;
     public Image fillImage;
     private Slider slider;
 
@@ -17,20 +18,22 @@ public class PlayerHealthBar : MonoBehaviour
     private void Update()
     {
 
-        if(slider.value <= slider.minValue)
+        if (slider.value <= slider.minValue)
         {
             fillImage.enabled = false;
         }
 
-        if(slider.value > slider.minValue && !fillImage.enabled)
+        if (slider.value > slider.minValue && !fillImage.enabled)
         {
             fillImage.enabled = true;
         }
-        
-       UpdateHpBar();
+
+        UpdateHpBar();
+
     }
 
-      private void UpdateHpBar()
+
+    private void UpdateHpBar()
     {
         float fillValue = pSettings.updateHp;
 

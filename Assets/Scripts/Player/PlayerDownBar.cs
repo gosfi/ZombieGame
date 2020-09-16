@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Player;
 
 public class PlayerDownBar : MonoBehaviour
 {
-    public PlayerSettings pSettings;
+    private PlayerMovement pSettings;
     public Image fillImage;
     private Slider slider;
 
-    private void Awake()
+    private void Start()
     {
         slider = GetComponent<Slider>();
+        pSettings = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         if (slider.value <= slider.minValue)
         {
             fillImage.enabled = false;
