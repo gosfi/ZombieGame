@@ -117,7 +117,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3fb8e62f6a41dae47984ef766e69b291, type: 3}
+  m_Motion: {fileID: 7400000, guid: c86bcc523d8124f4894f3960308df0b4, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: isAttacking
@@ -129,7 +129,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Animation Zombie 04
+  m_Name: Animation Zombie 05
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
