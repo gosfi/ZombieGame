@@ -15,7 +15,7 @@ namespace Player
         public Transform groundCheck;
         private float groundDistance = 0.4f;
         public LayerMask groundMask;
-        public float mouseSensitivity = 500f;
+        public float mouseSensitivity = 100f;
         private Transform player;
         float xRotation = 0f;
         Vector3 velocity;

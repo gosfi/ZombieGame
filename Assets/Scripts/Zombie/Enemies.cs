@@ -9,10 +9,9 @@ public class Enemies : MonoBehaviour
     const float HIT_TIMER = 2f;
 
     float hp = 100f;
-    float receiveDamage = 10f;
+   // float receiveDamage = 10f;
     bool isInDistance = true;
     float hitTimer = HIT_TIMER;
-    bool stopMoving = false;
     float distance;
 
     public NavMeshAgent agent;
@@ -50,8 +49,7 @@ public class Enemies : MonoBehaviour
 
     void Attack()
     {
-
-
+        animator.SetBool("isAttacking", true);
         animator.SetTrigger("Attack");
 
         Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayers);
@@ -64,23 +62,29 @@ public class Enemies : MonoBehaviour
             player.Hit(2);
             Debug.Log(players.name + "s'est fait hit");
         }
-
+        
     }
 
     void Distance()
     {
-
-
+        distance = Vector3.Distance(distancePoint.position, player.position);
 
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
 
         foreach (Collider players in distancePlayer)
         {
+            if (distance > 2)
+            {
+
+                break;
+
+            }
             agent.speed = 0;
             hitTimer -= Time.deltaTime;
             if (isInDistance)
             {
+                
                 Attack();
                 isInDistance = false;
             }
@@ -89,24 +93,19 @@ public class Enemies : MonoBehaviour
 
                 Attack();
                 hitTimer = HIT_TIMER;
-            }
-            if (player.position.x - distancePoint.position.x > 0.5f)
-            {
-                break;
 
             }
 
         }
-        distance = player.position.x - distancePoint.position.x;
-        Debug.Log(distance);
-
-        if (player.position.x - distancePoint.position.x > 0.5f)
+        if (distance > 2)
         {
+            animator.SetBool("isAttacking", false);
+            animator.SetTrigger("Walk");
+            hitTimer = HIT_TIMER;
             agent.speed = 3.3f;
             isInDistance = true;
+
         }
-
-
     }
 
 
