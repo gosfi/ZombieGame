@@ -10,9 +10,10 @@ public class Enemies : MonoBehaviour
 
     float hp = 100f;
     float receiveDamage = 10f;
-    bool isInDistance = false;
+    bool isInDistance = true;
     float hitTimer = HIT_TIMER;
     bool stopMoving = false;
+    float distance;
 
     public NavMeshAgent agent;
     public GameObject zombie;
@@ -22,6 +23,7 @@ public class Enemies : MonoBehaviour
     public LayerMask playerLayers;
     public Transform distancePoint;
     public float distanceRange = 0.5f;
+    public Transform player;
 
 
 
@@ -77,26 +79,34 @@ public class Enemies : MonoBehaviour
         {
             agent.speed = 0;
             hitTimer -= Time.deltaTime;
-            if(hitTimer > 0)
+            if (isInDistance)
             {
-                animator.SetTrigger("Idle");
-
+                Attack();
+                isInDistance = false;
             }
-            else if(hitTimer <= 0)
+            if (hitTimer <= 0)
             {
-                //agent.speed = 3.3f;
+
                 Attack();
                 hitTimer = HIT_TIMER;
             }
+            if (player.position.x - distancePoint.position.x > 0.5f)
+            {
+                break;
 
-
-            
-            
-            
-
+            }
 
         }
-        Debug.Log("Player hit distance = " + isInDistance);
+        distance = player.position.x - distancePoint.position.x;
+        Debug.Log(distance);
+
+        if (player.position.x - distancePoint.position.x > 0.5f)
+        {
+            agent.speed = 3.3f;
+            isInDistance = true;
+        }
+
+
     }
 
 
