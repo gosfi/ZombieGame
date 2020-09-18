@@ -6,39 +6,42 @@ using UnityEngine.AI;
 
 public class Enemies : MonoBehaviour
 {
-    const float HIT_TIMER = 2f;
 
     float hp = 100f;
-   // float receiveDamage = 10f;
+    // float receiveDamage = 10f;
     bool isInDistance = true;
-    float hitTimer = HIT_TIMER;
     float distance;
+    float hitTimer;
+    float attackRange = 0.5f;
+    float distanceRange = 0.8f;
+
+    protected float timer = 2f;
+    protected float damage = 2f;
+    protected float speed = 3.5f;
 
     public NavMeshAgent agent;
     public GameObject zombie;
     public Animator animator;
     public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask playerLayers;
     public Transform distancePoint;
-    public float distanceRange = 0.5f;
+    public LayerMask playerLayers;
     public Transform player;
 
 
-
+    private void Start()
+    {
+        hitTimer = timer;
+        agent.speed = speed;
+    }
 
     // Update is called once per frame
     void Update()
     {
         Distance();
-
-
-
     }
 
     public void Hit(float dmg)
     {
-
         hp -= dmg;
 
         if (hp <= 0)
@@ -59,16 +62,14 @@ public class Enemies : MonoBehaviour
 
             PlayerMovement player = players.GetComponent<PlayerMovement>();
 
-            player.Hit(2);
+            player.Hit(damage);
             Debug.Log(players.name + "s'est fait hit");
         }
-        
     }
 
-    void Distance()
+    public virtual void Distance()
     {
         distance = Vector3.Distance(distancePoint.position, player.position);
-
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
 
@@ -84,7 +85,6 @@ public class Enemies : MonoBehaviour
             hitTimer -= Time.deltaTime;
             if (isInDistance)
             {
-                
                 Attack();
                 isInDistance = false;
             }
@@ -92,7 +92,7 @@ public class Enemies : MonoBehaviour
             {
 
                 Attack();
-                hitTimer = HIT_TIMER;
+                hitTimer = timer;
 
             }
 
@@ -101,8 +101,8 @@ public class Enemies : MonoBehaviour
         {
             animator.SetBool("isAttacking", false);
             animator.SetTrigger("Walk");
-            hitTimer = HIT_TIMER;
-            agent.speed = 3.3f;
+            hitTimer = timer;
+            agent.speed = speed;
             isInDistance = true;
 
         }
