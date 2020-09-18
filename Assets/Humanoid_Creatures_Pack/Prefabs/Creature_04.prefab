@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 609901613}
   - component: {fileID: 609901614}
   - component: {fileID: 609901618}
-  - component: {fileID: 1486652731443455676}
+  - component: {fileID: 5306239482333661172}
   m_Layer: 0
   m_Name: Creature_04
   m_TagString: Untagged
@@ -300,7 +300,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1486652731443455676
+--- !u!114 &5306239482333661172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
