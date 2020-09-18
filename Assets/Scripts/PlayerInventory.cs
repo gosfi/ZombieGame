@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject slot1;
-    public GameObject slot2;
-    public GameObject slot3;
+
+    public GameObject[] slots = new GameObject[3];
 
     public GameObject[] guns = new GameObject[3];
 
@@ -17,11 +16,11 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") >= 0.1f)
         {
-            if (index <= guns.Length - 1)
+            if (index <= 2)
             {
                 index++;
             }
-            else
+            if(index >= 3)
             {
                 index = 0;
             }
@@ -29,9 +28,12 @@ public class PlayerInventory : MonoBehaviour
             for (int i = 0; i < guns.Length; ++i)
             {
                 guns[i].SetActive(false);
+                slots[i].SetActive(false);
             }
 
             guns[index].SetActive(true);
+            slots[index].SetActive(true);
+
         }
         else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
@@ -39,7 +41,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 index--;
             }
-            else
+            if (index <= -1)
             {
                 index = 2;
             }
@@ -47,9 +49,13 @@ public class PlayerInventory : MonoBehaviour
             for (int i = 0; i < guns.Length; ++i)
             {
                 guns[i].SetActive(false);
+                slots[i].SetActive(false);
+
             }
 
             guns[index].SetActive(true);
+            slots[index].SetActive(true);
+
         }
     }
 
