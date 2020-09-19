@@ -1141,7 +1141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &611326475
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1784,6 +1784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 892000682}
+  - component: {fileID: 892000683}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -1805,6 +1806,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892000683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892000681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea98f1ca44703ac42974296eff8adfa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 321130066}
 --- !u!1 &895290870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1147870950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,11 +2760,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 553307019, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 553307019, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 825993781, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2779,7 +2793,7 @@ PrefabInstance:
     - target: {fileID: 9031884815194441830, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031884815194441831, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
