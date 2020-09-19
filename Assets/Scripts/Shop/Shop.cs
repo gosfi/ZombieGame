@@ -70,12 +70,29 @@ public class Shop : MonoBehaviour
         
         if(shotgunActive && playerMoney >= 500)
         {
-            player.guns[1] = shotgun;
+            for(int i = 0; i < player.guns.Length; i++)
+            {
+                player.guns[i].SetActive(false);
+                player.slots[i].SetActive(false);
+            }
+            player.guns[1].SetActive(true);
+            player.slots[1].SetActive(true);
+
+            playerMoney -= 500;
         }
 
         if(ak47Active && playerMoney >= 1000)
         {
-            player.guns[1] = ak47;
+            for (int i = 0; i < player.guns.Length; i++)
+            {
+                player.guns[i].SetActive(false);
+                player.slots[i].SetActive(false);
+            }
+            player.guns[2].SetActive(true);
+            player.slots[2].SetActive(true);
+
+            playerMoney -= 1000;
+
         }
 
     }
