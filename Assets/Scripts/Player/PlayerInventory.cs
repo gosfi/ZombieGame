@@ -40,7 +40,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 index--;
             }
-            if (index <= 0)
+            if (index < 0)
             {
                 index = 3;
             }
