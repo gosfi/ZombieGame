@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,12 @@ public class WaveManager : MonoBehaviour
 
     public static WaveManager instance;
 
+    public int waveNumber;
+    public int nbOfZombieInWave;
+    public bool IsInWave = false;
+
+    public Spawner[] spawners;
+
     private void Awake()
     {
         instance = this;
@@ -24,6 +31,7 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools)
@@ -39,6 +47,8 @@ public class WaveManager : MonoBehaviour
 
             poolDictionnary.Add(pool.tag, objectPool);
         }
+
+        StartWave();
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 pos, Quaternion rotation)
@@ -58,5 +68,46 @@ public class WaveManager : MonoBehaviour
         poolDictionnary[tag].Enqueue(objToSpawn);
 
         return objToSpawn;
+    }
+
+    public void reduceZombieNumber()
+    {
+        nbOfZombieInWave--;
+
+        if (nbOfZombieInWave == 0)
+        {
+            EndTheWave();
+        }
+    }
+
+    private void EndTheWave()
+    {
+        waveNumber++;
+        nbOfZombieInWave = 5 * waveNumber;
+
+        Intermission();
+    }
+
+    private void Intermission()
+    {
+        float timer = 30f;
+
+        timer -= Time.deltaTime;
+
+        if (timer <= 0)
+        {
+            StartWave();
+        }
+    }
+
+    private void StartWave()
+    {
+        for (int i = 0; i < nbOfZombieInWave; ++i)
+        {
+            foreach (Spawner spawn in spawners)
+            {
+                spawn.SpawnMonster();
+            }
+        }
     }
 }

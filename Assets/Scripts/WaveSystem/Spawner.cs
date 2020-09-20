@@ -11,20 +11,17 @@ public class Spawner : MonoBehaviour
 
     WaveManager wave;
 
-    private void Start() {
+    private void Start()
+    {
         wave = WaveManager.instance;
     }
 
-    private void FixedUpdate()
-    {
-        timer -= Time.fixedDeltaTime;
-
-        if (canSpawn && timer <= 0)
+    public void SpawnMonster()
+    {   
+        if (canSpawn)
         {
-            wave.SpawnFromPool(tag, transform.position, Quaternion.identity); 
-            timer = 0.5f;
+            wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
         }
-        Debug.Log(timer);
     }
 
     private void OnTriggerEnter(Collider other)
