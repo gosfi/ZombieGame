@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 1808814858}
   m_Layer: 0
   m_Name: Creature_02
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -316,7 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590bbfda2a4be8c47b6dcfdaad8dfc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  destination: {fileID: 9031884815194441831, guid: 7762ec3372f981c40b3457330ce2172c,
+    type: 3}
 --- !u!195 &2500684761774054311
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -411,7 +412,7 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 512
-  player: {fileID: 0}
+  player: {fileID: 9031884815194441831, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
 --- !u!1 &1085891543481910
 GameObject:
   m_ObjectHideFlags: 0
