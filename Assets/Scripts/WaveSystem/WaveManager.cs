@@ -85,10 +85,10 @@ public class WaveManager : MonoBehaviour
         waveNumber++;
         nbOfZombieInWave = 5 * waveNumber;
 
-        Intermission();
+       // Intermission();
     }
 
-    private void Intermission()
+   /* private void Intermission()
     {
         float timer = 30f;
 
@@ -98,7 +98,7 @@ public class WaveManager : MonoBehaviour
         {
             StartWave();
         }
-    }
+    }*/
 
     private void StartWave()
     {

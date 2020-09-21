@@ -5,22 +5,32 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     bool canSpawn = true;
-    float timer = 0.5f;
+    float timer = 1.5f;
 
     public string tag;
 
     WaveManager wave;
 
-    private void Start()
+    private void Awake()
     {
         wave = WaveManager.instance;
     }
 
     public void SpawnMonster()
-    {   
+    {
         if (canSpawn)
         {
             wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if (canSpawn && timer <= 0)
+        {
+            wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
+            timer = 1.5f;
         }
     }
 
