@@ -2623,6 +2623,11 @@ PrefabInstance:
       propertyPath: ammoPistol
       value: 
       objectReference: {fileID: 114258448}
+    - target: {fileID: 5810692023303889810, guid: 7762ec3372f981c40b3457330ce2172c,
+        type: 3}
+      propertyPath: nbOfBullets
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7314452910502156023, guid: 7762ec3372f981c40b3457330ce2172c,
         type: 3}
       propertyPath: ammoMachineGun
