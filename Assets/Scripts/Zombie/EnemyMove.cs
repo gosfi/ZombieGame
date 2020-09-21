@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField]
+   // [SerializeField]
     Transform destination;
     NavMeshAgent navMeshAgent;
 
@@ -13,7 +13,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
-
+        destination = GameObject.FindGameObjectWithTag("Player").transform;
 
 
     }

@@ -25,19 +25,27 @@ public class Enemies : MonoBehaviour
     public Transform attackPoint;
     public Transform distancePoint;
     public LayerMask playerLayers;
-    public Transform player;
+    private Transform player;
 
-
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     private void Start()
     {
         hitTimer = timer;
         agent.speed = speed;
+
+        
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Distance();
+        
     }
 
     public void Hit(float dmg)
@@ -70,6 +78,7 @@ public class Enemies : MonoBehaviour
     public virtual void Distance()
     {
         distance = Vector3.Distance(distancePoint.position, player.position);
+        Debug.Log(distance);
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
 
