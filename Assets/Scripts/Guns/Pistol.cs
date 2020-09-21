@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pistol : Gun
 {
+    public Text ammoPistol;
+
     // Update is called once per frame
 
     private void OnEnable()
@@ -32,6 +35,8 @@ public class Pistol : Gun
         Aim(Input.GetButton("Fire2"));
 
         UpdateSway();
+
+        ammoPistol.text = nbOfBullets.ToString();
 
     }
 

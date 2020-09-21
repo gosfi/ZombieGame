@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject[] guns = new GameObject[3];
     public GameObject[] slots = new GameObject[3];
+    public GameObject[] ammo = new GameObject[3];
 
     int index = 0;
 
@@ -29,10 +30,12 @@ public class PlayerInventory : MonoBehaviour
             {
                 guns[i].SetActive(false);
                 slots[i].SetActive(false);
+                ammo[i].SetActive(false);
             }
 
             guns[index].SetActive(true);
             slots[index].SetActive(true);
+            ammo[index].SetActive(true);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
@@ -49,10 +52,12 @@ public class PlayerInventory : MonoBehaviour
             {
                 guns[i].SetActive(false);
                 slots[i].SetActive(false);
+                ammo[i].SetActive(false);
             }
 
             guns[index].SetActive(true);
             slots[index].SetActive(true);
+            ammo[index].SetActive(true);
         }
     }
 
