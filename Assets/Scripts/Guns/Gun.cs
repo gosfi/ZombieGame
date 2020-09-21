@@ -57,6 +57,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             if(hit.transform.CompareTag("Zombie")){
+                zombie =  hit.collider.gameObject.GetComponent<Enemies>();
                 zombie.Hit(dmg);
             }
         }

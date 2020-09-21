@@ -25,13 +25,22 @@ public class Enemies : MonoBehaviour
     public Transform attackPoint;
     public Transform distancePoint;
     public LayerMask playerLayers;
-    public Transform player;
+    private Transform player;
 
+
+    private void Awake()
+    {
+        player = GameObject.FindWithTag("criss").transform;
+    }
 
     private void Start()
     {
         hitTimer = timer;
         agent.speed = speed;
+
+
+
+        Debug.Log($"is the player");
     }
 
     // Update is called once per frame
@@ -54,7 +63,7 @@ public class Enemies : MonoBehaviour
     {
         animator.SetBool("isAttacking", true);
         animator.SetTrigger("Attack");
-
+        Debug.Log("start Attack method");
         Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayers);
 
         foreach (Collider players in hitPlayer)
@@ -69,6 +78,7 @@ public class Enemies : MonoBehaviour
 
     public virtual void Distance()
     {
+        Debug.Log("start distance method");
         distance = Vector3.Distance(distancePoint.position, player.position);
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
@@ -85,11 +95,13 @@ public class Enemies : MonoBehaviour
             hitTimer -= Time.deltaTime;
             if (isInDistance)
             {
+                Debug.Log("deuxieme if calisse");
                 Attack();
                 isInDistance = false;
             }
             if (hitTimer <= 0)
             {
+                Debug.Log("troisieme if esti");
 
                 Attack();
                 hitTimer = timer;

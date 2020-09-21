@@ -5,13 +5,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     bool canSpawn = true;
-    float timer = 1.5f;
+    float timer = 5f;
 
     public string tag;
 
     WaveManager wave;
 
-    private void Awake()
+    private void Start()
     {
         wave = WaveManager.instance;
     }
@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
         if (canSpawn && timer <= 0)
         {
             wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
-            timer = 1.5f;
+            timer = 5f;
         }
     }
 

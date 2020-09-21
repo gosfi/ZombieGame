@@ -21,6 +21,7 @@ public class Zombie01 : Enemies
     // Update is called once per frame
     void Update()
     {
+        
         Distance();
     }
 }
