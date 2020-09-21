@@ -48,7 +48,7 @@ namespace Player
 
         private void Start()
         {
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
             player = this.transform;
             controller = GetComponent<CharacterController>();
         }
