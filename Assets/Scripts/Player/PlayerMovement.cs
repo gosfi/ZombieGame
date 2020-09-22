@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using Mirror;
 
 namespace Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : NetworkBehaviour
     {
         const float WALK_SPEED = 10f;
         const float RUN_SPEED = 20f;
@@ -60,6 +61,7 @@ namespace Player
             Gravity();
             CheckGround();
             Regen();
+            Down();
             Revive();
         }
 
@@ -174,12 +176,14 @@ namespace Player
 
             if (isDown)
             {
-                reviveZone.SetActive(true);
+                /*reviveZone.SetActive(true);
                 playerDownTime.SetActive(true);
                 playerReviveTime.SetActive(true);
                 playerReviveCircle.SetActive(true);
                 downTime -= Time.deltaTime;
-                canRevive = true;
+                canRevive = true;*/
+                 Dead();
+
             }
 
             if (downTime <= 0)
@@ -225,7 +229,8 @@ namespace Player
 
         void Dead()
         {
-            Destroy(player);
+             SceneManager.LoadScene("Demo");
+            //Destroy(player);
             cameraSpectate.SetActive(true);
         }
 
