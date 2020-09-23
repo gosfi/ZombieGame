@@ -20,14 +20,23 @@ public class PlayerSpawnSystem : NetworkBehaviour
         spawnPoints = spawnPoints.OrderBy(x => x.GetSiblingIndex()).ToList();
     }
 
-    public static void RemoveSpawnPoint(Transform transform) => spawnPoints.Remove(transform);
+    public static void RemoveSpawnPoint(Transform transform)
+    {
+        spawnPoints.Remove(transform);
+    }
 
-    public override void OnStartServer() => NetworkManagerLobby.OnServerReadied += SpawnPlayer;
+    public override void OnStartServer() 
+    {
+    NetworkManagerLobby.OnServerReadied += SpawnPlayer;
+    }
 
 
 
     [ServerCallback]
-    private void OnDestroy() => NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
+    private void OnDestroy()
+    {
+        NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
+    }
 
     [Server]
     private void SpawnPlayer(NetworkConnection conn)
