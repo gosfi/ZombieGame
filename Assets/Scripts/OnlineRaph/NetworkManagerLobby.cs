@@ -58,21 +58,21 @@ public class NetworkManagerLobby : NetworkManager
             return;
         }
 
-        if(SceneManager.GetActiveScene().name != menuScene)
-        {
-            conn.Disconnect();
-            return;
-        }
+      //if(SceneManager.GetActiveScene().name != menuScene)
+      //{
+      //    conn.Disconnect();
+      //    return;
+      //}
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        if(SceneManager.GetActiveScene().name == menuScene)
-        {
-            NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
-
-            NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
-        }
+       //if(SceneManager.GetActiveScene().name == menuScene)
+       //{
+       //    NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
+       //
+       //    NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
+       //}
     }
 
     public override void OnServerReady(NetworkConnection conn)
