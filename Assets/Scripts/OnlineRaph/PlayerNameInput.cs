@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerNameInput : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private TMP_InputField nameInputField = null;
+    [SerializeField] private InputField nameInputField = null;
     [SerializeField] private Button continueButton = null;
 
     public static string DisplayName { get; private set; }
