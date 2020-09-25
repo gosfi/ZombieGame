@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class NetworkManagerLobby : NetworkManager
 {
@@ -18,7 +19,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
-    
+
     public static event Action<NetworkConnection> OnServerReadied;
 
     public override void OnStartServer()
@@ -30,7 +31,7 @@ public class NetworkManagerLobby : NetworkManager
     {
         var prefab = Resources.LoadAll<GameObject>("Prefab");
 
-        foreach(var prefabs in prefab)
+        foreach (var prefabs in prefab)
         {
             ClientScene.RegisterPrefab(prefabs);
         }
@@ -52,27 +53,27 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerConnect(NetworkConnection conn)
     {
-        if(numPlayers >= maxConnections)
+        if (numPlayers >= maxConnections)
         {
             conn.Disconnect();
             return;
         }
 
-      //if(SceneManager.GetActiveScene().name != menuScene)
-      //{
-      //    conn.Disconnect();
-      //    return;
-      //}
+        if (SceneManager.GetActiveScene().name != menuScene)
+        {
+            conn.Disconnect();
+            return;
+        }
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-       //if(SceneManager.GetActiveScene().name == menuScene)
-       //{
-       //    NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
-       //
-       //    NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
-       //}
+        if (SceneManager.GetActiveScene().name == menuScene)
+        {
+            NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
+
+            NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
+        }
     }
 
     public override void OnServerReady(NetworkConnection conn)
