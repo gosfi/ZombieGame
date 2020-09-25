@@ -497,21 +497,20 @@ MonoBehaviour:
   runInBackground: 1
   autoStartServerBuild: 1
   showDebugMessages: 0
-  serverTickRate: 30
+  serverTickRate: 60
   offlineScene: 
-  onlineScene: Assets/Scenes/Multiplayer Spawns.unity
+  onlineScene: Assets/Scenes/RaphMenuOnline.unity
   transport: {fileID: 1796172992}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 9031884815194441830, guid: 7762ec3372f981c40b3457330ce2172c,
+  playerPrefab: {fileID: 5580031980700390218, guid: 95c81b7e45a912c43bfb153f54181ab0,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
-  minPlayers: 2
   menuScene: Assets/Scenes/RaphMenuOnline.unity
   roomPlayerPrefab: {fileID: 4461297401377377393, guid: 95c81b7e45a912c43bfb153f54181ab0,
     type: 3}
@@ -606,6 +605,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 385
+      objectReference: {fileID: 0}
     - target: {fileID: 1784977817060763960, guid: 11e4b6112b2d72345ace3a9337d8f184,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -681,11 +710,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1784977817867117872, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_RichText
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1784977818634638033, guid: 11e4b6112b2d72345ace3a9337d8f184,
         type: 3}
       propertyPath: nameInputField
       value: 
       objectReference: {fileID: 1426027606}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977818634638038, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 970
+      objectReference: {fileID: 0}
     - target: {fileID: 7959766206670244870, guid: 11e4b6112b2d72345ace3a9337d8f184,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size

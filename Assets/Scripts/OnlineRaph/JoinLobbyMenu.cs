@@ -33,6 +33,8 @@ public class JoinLobbyMenu : MonoBehaviour
         networkManager.StartClient();
 
         joinButton.interactable = false;
+
+        Debug.Log("ip : " + ipAdress);
     }
 
     private void HandleClientConnected()

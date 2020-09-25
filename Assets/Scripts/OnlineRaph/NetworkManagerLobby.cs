@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManagerLobby : NetworkManager
 {
-    [SerializeField] private int minPlayers = 2;
+   // [SerializeField] private int minPlayers = 2;
     [Scene] [SerializeField] private string menuScene = string.Empty;
 
     [Header("Room")]
@@ -59,7 +59,7 @@ public class NetworkManagerLobby : NetworkManager
             return;
         }
 
-        if (SceneManager.GetActiveScene().name != menuScene)
+        if (SceneManager.GetActiveScene().path != menuScene)
         {
             conn.Disconnect();
             return;
@@ -68,8 +68,15 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        if (SceneManager.GetActiveScene().name == menuScene)
+        Debug.Log("juste avant ma condition de marde");
+        Debug.Log("scen mana name : " + SceneManager.GetActiveScene().path);
+        Debug.Log("menuScene name : " + menuScene);
+
+
+
+        if (SceneManager.GetActiveScene().path == menuScene)
         {
+            Debug.Log("est senser faire spawn mon tabarnak de room player");
             NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
 
             NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
