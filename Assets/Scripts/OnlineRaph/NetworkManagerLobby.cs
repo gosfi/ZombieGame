@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManagerLobby : NetworkManager
 {
-   // [SerializeField] private int minPlayers = 2;
+    [SerializeField] private int minPlayers = 2;
     [Scene] [SerializeField] private string menuScene = string.Empty;
 
     [Header("Room")]
@@ -19,6 +19,8 @@ public class NetworkManagerLobby : NetworkManager
 
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
+
+    public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
 
     public static event Action<NetworkConnection> OnServerReadied;
 
@@ -68,16 +70,13 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        Debug.Log("juste avant ma condition de marde");
-        Debug.Log("scen mana name : " + SceneManager.GetActiveScene().path);
-        Debug.Log("menuScene name : " + menuScene);
-
-
-
         if (SceneManager.GetActiveScene().path == menuScene)
         {
-            Debug.Log("est senser faire spawn mon tabarnak de room player");
+            bool isLeader = RoomPlayers.Count == 0;
+
             NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
+
+            roomPlayerInstance.IsLeader = isLeader;
 
             NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
         }
@@ -97,5 +96,48 @@ public class NetworkManagerLobby : NetworkManager
             GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
             NetworkServer.Spawn(playerSpawnSystemInstance);
         }
+    }
+
+    public override void OnServerDisconnect(NetworkConnection conn)
+    {
+        if (conn.identity != null)
+        {
+            var player = conn.identity.GetComponent<NetworkRoomPlayerLobby>();
+
+            RoomPlayers.Remove(player);
+
+            NotifyPlayersOfReadyState();
+        }
+        base.OnServerDisconnect(conn);
+    }
+
+    public override void OnStopServer()
+    {
+        RoomPlayers.Clear();
+    }
+
+    public void NotifyPlayersOfReadyState()
+    {
+        foreach(var player in RoomPlayers)
+        {
+            player.HandleReadyToStart(IsReadyToStart());
+        }
+    }
+
+    private bool IsReadyToStart()
+    {
+        if(numPlayers < minPlayers)
+        {
+            return false;
+        }
+
+        foreach(var player in RoomPlayers)
+        {
+            if (!player.IsReady)
+            {
+                return false;
+            }
+        }
+            return true;
     }
 }
