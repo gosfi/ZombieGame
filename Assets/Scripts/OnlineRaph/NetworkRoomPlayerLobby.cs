@@ -136,6 +136,6 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
             return;
         }
 
-        
+        Room.StartGame();
     }
 }

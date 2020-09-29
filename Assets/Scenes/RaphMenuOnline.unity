@@ -325,10 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Profile: {fileID: 0}
-  m_StaticLightingSkyUniqueID: 0
-  m_SkySettings: {fileID: 0}
-  m_SkySettingsFromProfile: {fileID: 0}
 --- !u!4 &909237159
 Transform:
   m_ObjectHideFlags: 1
@@ -514,6 +510,8 @@ MonoBehaviour:
   minPlayers: 2
   menuScene: Assets/Scenes/RaphMenuOnline.unity
   roomPlayerPrefab: {fileID: 4461297401377377393, guid: 95c81b7e45a912c43bfb153f54181ab0,
+    type: 3}
+  gamePlayerPrefab: {fileID: 7877273547108685408, guid: da0e904018f18c04889a0ac2c2518372,
     type: 3}
   playerSpawnSystem: {fileID: 0}
 --- !u!4 &1796172994
