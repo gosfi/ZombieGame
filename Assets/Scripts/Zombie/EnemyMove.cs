@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Mirror;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : NetworkBehaviour
 {
     [SerializeField]
     Transform destination;

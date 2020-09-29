@@ -1,11 +1,13 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
     public int nbOfBullets, maxBullets;
     public float range, dmg, aimSpeed, fireRate;
     public bool CanShoot;
+   
 
     public Vector3 AimDownSight, HipFire; //0,-0.25,0.8
 
@@ -24,13 +26,14 @@ public class Gun : MonoBehaviour
 
     string rayCastName;
 
-    public EnemySettings zombie;
+    public Enemies zombie;
 
 
     private void Start()
     {
         muzzleFlash = GetComponent<MuzzleFlash>();
         originRotation = transform.localRotation;
+       
     }
 
     public void Shoot()
@@ -54,6 +57,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             if(hit.transform.CompareTag("Zombie")){
+                zombie =  hit.collider.gameObject.GetComponent<Enemies>();
                 zombie.Hit(dmg);
             }
         }
