@@ -19,7 +19,6 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     public bool IsReady = false;
 
     private bool isLeader;
-
     public bool IsLeader
     {
         set
@@ -101,7 +100,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         for(int i = 0; i < Room.RoomPlayers.Count; i++)
         {
             playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
-            playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ? "<color = green>Ready</color>" : "<color = red>Not Ready</color>";
+            playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ? "Ready" : "Not Ready";
         }
     }
 
