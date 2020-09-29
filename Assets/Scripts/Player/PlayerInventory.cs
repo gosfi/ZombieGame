@@ -4,54 +4,66 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject slot1;
-    public GameObject slot2;
-    public GameObject slot3;
+  
 
-    public GameObject pistol;
-    public GameObject shotgun;
-    public GameObject ak_47;
+    public GameObject[] guns = new GameObject[3];
+    public GameObject[] slots = new GameObject[3];
+    public GameObject[] ammo = new GameObject[3];
+
+    int index = 0;
 
 
     void Select()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetAxis("Mouse ScrollWheel") >= 0.1f)
         {
-            slot1.SetActive(true);
-            pistol.SetActive(true);
+            if (index <= 2)
+            {
+                index++;
+            }
+            if(index >= 3)
+            {
+                index = 0;
+            }
 
-            slot2.SetActive(false);
-            shotgun.SetActive(false);
+            for (int i = 0; i < guns.Length; ++i)
+            {
+                guns[i].SetActive(false);
+                slots[i].SetActive(false);
+                ammo[i].SetActive(false);
+            }
 
-            slot3.SetActive(false);
-            ak_47.SetActive(false);
+            guns[index].SetActive(true);
+            slots[index].SetActive(true);
+            ammo[index].SetActive(true);
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
-            slot1.SetActive(false);
-            pistol.SetActive(false);
+            if (index >= 0)
+            {
+                index--;
+            }
+            if (index < 0)
+            {
+                index = 3;
+            }
 
-            slot2.SetActive(true);
-            shotgun.SetActive(true);
+            for (int i = 0; i < guns.Length; ++i)
+            {
+                guns[i].SetActive(false);
+                slots[i].SetActive(false);
+                ammo[i].SetActive(false);
+            }
 
-            slot3.SetActive(false);
-            ak_47.SetActive(false);
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            slot1.SetActive(false);
-            pistol.SetActive(false);
-
-            slot2.SetActive(false);
-            shotgun.SetActive(false);
-
-            slot3.SetActive(true);
-            ak_47.SetActive(true);
+            guns[index].SetActive(true);
+            slots[index].SetActive(true);
+            ammo[index].SetActive(true);
         }
     }
 
     private void Update()
     {
         Select();
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 }

@@ -14,16 +14,12 @@ public class EnemyMove : NetworkBehaviour
     void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
-
-
-
+        destination = GameObject.FindWithTag("criss").transform;
     }
 
     private void Update()
     {
-
         SetDestination();
-
     }
 
     private void SetDestination()
