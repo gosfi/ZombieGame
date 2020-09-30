@@ -16,7 +16,6 @@ public class NetworkManagerLobby : NetworkManager
 
     [Header("Game")]
     [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
-
     [SerializeField] private GameObject playerSpawnSystem = null;
 
     public static event Action OnClientConnected;
@@ -85,12 +84,7 @@ public class NetworkManagerLobby : NetworkManager
         }
     }
 
-    public override void OnServerReady(NetworkConnection conn)
-    {
-        base.OnServerReady(conn);
-
-        OnServerReadied?.Invoke(conn);
-    }
+   
 
     public override void OnServerSceneChanged(string sceneName)
     {
@@ -154,7 +148,7 @@ public class NetworkManagerLobby : NetworkManager
                 return;
             }
 
-            ServerChangeScene("Scene_Map_01");
+            ServerChangeScene("MultiplayerSpawns");
         }
     }
 
@@ -175,6 +169,13 @@ public class NetworkManagerLobby : NetworkManager
         }
 
         base.ServerChangeScene(newSceneName);
+    }
+
+    public override void OnServerReady(NetworkConnection conn)
+    {
+        base.OnServerReady(conn);
+
+        OnServerReadied?.Invoke(conn);
     }
 
 }
