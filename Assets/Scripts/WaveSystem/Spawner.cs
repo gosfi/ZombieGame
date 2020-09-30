@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Spawner : MonoBehaviour
+public class Spawner : NetworkBehaviour
 {
     bool canSpawn = true;
     float timer = 5f;

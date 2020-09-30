@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Mirror;
 
-public class Enemies : MonoBehaviour
+public class Enemies : NetworkBehaviour
 {
 
     float hp = 100f;
