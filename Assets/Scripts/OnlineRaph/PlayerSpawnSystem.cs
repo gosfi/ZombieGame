@@ -28,6 +28,7 @@ public class PlayerSpawnSystem : NetworkBehaviour
     public override void OnStartServer() 
     {
     NetworkManagerLobby.OnServerReadied += SpawnPlayer;
+        Debug.Log("JSUIS SENSER SPAWN AU START TABARNAK");
     }
 
 
@@ -36,6 +37,8 @@ public class PlayerSpawnSystem : NetworkBehaviour
     private void OnDestroy()
     {
         NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
+        Debug.Log("COMMENT CA JME FAIS DELETE CRISS");
+
     }
 
     [Server]
@@ -49,8 +52,11 @@ public class PlayerSpawnSystem : NetworkBehaviour
             return;
         }
 
+        Debug.Log("JE SUIS SENSER SPAWN TABARNAK");
+
         GameObject playerInstance = Instantiate(playerPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
         NetworkServer.Spawn(playerInstance, conn);
+        //NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
         nextIndex++;
     }

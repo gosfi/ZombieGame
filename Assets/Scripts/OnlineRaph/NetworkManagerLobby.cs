@@ -84,7 +84,7 @@ public class NetworkManagerLobby : NetworkManager
         }
     }
 
-   
+
 
     public override void OnServerSceneChanged(string sceneName)
     {
@@ -116,7 +116,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public void NotifyPlayersOfReadyState()
     {
-        foreach(var player in RoomPlayers)
+        foreach (var player in RoomPlayers)
         {
             player.HandleReadyToStart(IsReadyToStart());
         }
@@ -124,24 +124,24 @@ public class NetworkManagerLobby : NetworkManager
 
     private bool IsReadyToStart()
     {
-        if(numPlayers < minPlayers)
+        if (numPlayers < minPlayers)
         {
             return false;
         }
 
-        foreach(var player in RoomPlayers)
+        foreach (var player in RoomPlayers)
         {
             if (!player.IsReady)
             {
                 return false;
             }
         }
-            return true;
+        return true;
     }
 
     public void StartGame()
     {
-        if(SceneManager.GetActiveScene().path == menuScene)
+        if (SceneManager.GetActiveScene().path == menuScene)
         {
             if (!IsReadyToStart())
             {
@@ -154,10 +154,13 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void ServerChangeScene(string newSceneName)
     {
-        if(SceneManager.GetActiveScene().path == menuScene  && newSceneName.StartsWith("Scene_Map"))
+        Debug.Log("menuScene : " + menuScene);
+        Debug.Log("newSceneName : " + newSceneName);
+        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Multiplayer"))
         {
-            for(int i = RoomPlayers.Count - 1; i>= 0; i--)
+            for (int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
+                Debug.Log("JRENTE DU LA DEDANS?");
                 var conn = RoomPlayers[i].connectionToClient;
                 var gamePlayerInstance = Instantiate(gamePlayerPrefab);
                 gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);

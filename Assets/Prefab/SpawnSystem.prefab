@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  serverOnly: 0
+  serverOnly: 1
   m_AssetId: 
   hasSpawned: 0
 --- !u!114 &8449340015073486963
@@ -62,5 +62,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  playerPrefab: {fileID: 9031884815194441830, guid: 7762ec3372f981c40b3457330ce2172c,
+  playerPrefab: {fileID: 966866960764113599, guid: 553085afe7840e94fa6e81ab3d9390af,
     type: 3}

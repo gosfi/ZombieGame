@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MultiplayerSpawns.unity
     guid: 72f1f6f807a46da4c8b5cead9a6be916
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_Map_01.unity
     guid: 7ff98bf076b60084ebafa00cfa991ecd
   m_configObjects: {}
