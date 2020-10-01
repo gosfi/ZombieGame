@@ -56,13 +56,16 @@ namespace Player
 
         void Update()
         {
-            Move();
-            RotatePlayer();
-            Gravity();
-            CheckGround();
-            Regen();
-            Down();
-            Revive();
+            if (isLocalPlayer)
+            {
+                Move();
+                RotatePlayer();
+                Gravity();
+                CheckGround();
+                Regen();
+                Down();
+                Revive();
+            }
         }
 
         void Move()
@@ -182,7 +185,7 @@ namespace Player
                 playerReviveCircle.SetActive(true);
                 downTime -= Time.deltaTime;
                 canRevive = true;*/
-                 Dead();
+                Dead();
 
             }
 
@@ -229,7 +232,7 @@ namespace Player
 
         void Dead()
         {
-             SceneManager.LoadScene("Demo");
+            SceneManager.LoadScene("Demo");
             //Destroy(player);
             cameraSpectate.SetActive(true);
         }

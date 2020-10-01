@@ -29,24 +29,20 @@ public class Enemies : NetworkBehaviour
     private Transform player;
 
 
-    private void Awake()
-    {
-        player = GameObject.FindWithTag("criss").transform;
-    }
-
     private void Start()
     {
         hitTimer = timer;
         agent.speed = speed;
 
 
-
-        Debug.Log($"is the player");
+        player = GameObject.FindGameObjectWithTag("criss").transform;
+        Debug.Log($"{player} is the player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         Distance();
     }
 
