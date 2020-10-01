@@ -20,11 +20,11 @@ public class NetworkManagerLobby : NetworkManager
 
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
+    public static event Action<NetworkConnection> OnServerReadied;
 
     public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
     public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
 
-    public static event Action<NetworkConnection> OnServerReadied;
 
     public override void OnStartServer()
     {
@@ -86,14 +86,7 @@ public class NetworkManagerLobby : NetworkManager
 
 
 
-    public override void OnServerSceneChanged(string sceneName)
-    {
-        if (sceneName.StartsWith("Scene_Map"))
-        {
-            GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
-            NetworkServer.Spawn(playerSpawnSystemInstance);
-        }
-    }
+    
 
     public override void OnServerDisconnect(NetworkConnection conn)
     {
@@ -167,11 +160,20 @@ public class NetworkManagerLobby : NetworkManager
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 
-                NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject);
+                NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject, true);
             }
         }
 
         base.ServerChangeScene(newSceneName);
+    }
+
+    public override void OnServerSceneChanged(string sceneName)
+    {
+        if (sceneName.StartsWith("Multiplayer"))
+        {
+            GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
+            NetworkServer.Spawn(playerSpawnSystemInstance);
+        }
     }
 
     public override void OnServerReady(NetworkConnection conn)
