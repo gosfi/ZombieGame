@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿
 using Mirror;
-using TMPro;
+
 
 public class NetworkGamePlayerLobby : NetworkBehaviour
 {
@@ -39,7 +36,7 @@ public class NetworkGamePlayerLobby : NetworkBehaviour
         Room.GamePlayers.Add(this);
     }
 
-    public override void OnNetworkDestroy()
+    public override void OnStopClient()
     {
         Room.GamePlayers.Remove(this);
     }

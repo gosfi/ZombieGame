@@ -52,12 +52,9 @@ public class PlayerSpawnSystem : NetworkBehaviour
             return;
         }
 
-        Debug.Log("JE SUIS SENSER SPAWN TABARNAK");
 
         GameObject playerInstance = Instantiate(playerPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
         NetworkServer.Spawn(playerInstance, conn);
-        //NetworkServer.AddPlayerForConnection(conn, playerInstance);
-        Debug.Log(nextIndex);
         nextIndex++;
     }
 }

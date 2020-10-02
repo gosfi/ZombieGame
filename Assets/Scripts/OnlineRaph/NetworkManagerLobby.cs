@@ -147,8 +147,6 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void ServerChangeScene(string newSceneName)
     {
-        Debug.Log("menuScene : " + menuScene);
-        Debug.Log("newSceneName : " + newSceneName);
         if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Multiplayer"))
         {
             for (int i = RoomPlayers.Count - 1; i >= 0; i--)
@@ -161,6 +159,7 @@ public class NetworkManagerLobby : NetworkManager
                 NetworkServer.Destroy(conn.identity.gameObject);
 
                 NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject, true);
+               // NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject);
             }
         }
 
