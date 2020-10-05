@@ -46,7 +46,7 @@ public class PlayerInventory : NetworkBehaviour
             }
             if (index < 0)
             {
-                index = 3;
+                index = 2;
             }
 
             for (int i = 0; i < guns.Length; ++i)
