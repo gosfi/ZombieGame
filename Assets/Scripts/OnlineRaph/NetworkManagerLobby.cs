@@ -28,12 +28,12 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnStartServer()
     {
-        spawnPrefabs = Resources.LoadAll<GameObject>("Prefab").ToList();
+        spawnPrefabs = Resources.LoadAll<GameObject>("SpawnPrefabs").ToList();
     }
 
     public override void OnStartClient()
     {
-        var prefab = Resources.LoadAll<GameObject>("Prefab");
+        var prefab = Resources.LoadAll<GameObject>("SpawnPrefabs");
 
         foreach (var prefabs in prefab)
         {
