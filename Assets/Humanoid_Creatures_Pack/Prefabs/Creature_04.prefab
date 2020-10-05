@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 609901614}
   - component: {fileID: 609901618}
   - component: {fileID: 5306239482333661172}
+  - component: {fileID: 6639566112766424629}
+  - component: {fileID: -632626862618175620}
   m_Layer: 0
   m_Name: Creature_04
   m_TagString: Zombie
@@ -261,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590bbfda2a4be8c47b6dcfdaad8dfc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   destination: {fileID: 9031884815194441831, guid: 7762ec3372f981c40b3457330ce2172c,
     type: 3}
 --- !u!23 &609901618
@@ -314,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d1d0d3de880c94d9bcdb364d14cece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   agent: {fileID: 609901613}
   zombie: {fileID: 1124609711639834}
   animator: {fileID: 95854705282683330}
@@ -322,7 +328,40 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 512
-  player: {fileID: 9031884815194441831, guid: 7762ec3372f981c40b3457330ce2172c, type: 3}
+--- !u!114 &6639566112766424629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124609711639834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 1
+  m_AssetId: 
+  hasSpawned: 0
+--- !u!114 &-632626862618175620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124609711639834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
 --- !u!1 &1184789589018600
 GameObject:
   m_ObjectHideFlags: 0

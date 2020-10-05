@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Player;
+using Mirror;
 
-public class PlayerReviveBar : MonoBehaviour
+public class PlayerReviveBar : NetworkBehaviour
 {
     public PlayerMovement pSettings;
     public Image fillImage;

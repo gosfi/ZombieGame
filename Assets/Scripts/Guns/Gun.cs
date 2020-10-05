@@ -1,8 +1,9 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class Gun : MonoBehaviour
+public class Gun : NetworkBehaviour
 {
     public int nbOfBullets, maxBullets;
     public float range, dmg, aimSpeed, fireRate;
