@@ -5,13 +5,26 @@ using Mirror;
 
 public class PlayerInventory : NetworkBehaviour
 {
-  
+
 
     public GameObject[] guns = new GameObject[3];
     public GameObject[] slots = new GameObject[3];
     public GameObject[] ammo = new GameObject[3];
 
     int index = 0;
+
+    #region Singleton
+
+    static private PlayerInventory instance = null;
+    public static PlayerInventory Instance
+    {
+        get
+        {
+            return instance ?? (new PlayerInventory());
+        }
+    }
+
+    #endregion
 
 
     void Select()
@@ -22,7 +35,7 @@ public class PlayerInventory : NetworkBehaviour
             {
                 index++;
             }
-            if(index >= 3)
+            if (index >= 3)
             {
                 index = 0;
             }

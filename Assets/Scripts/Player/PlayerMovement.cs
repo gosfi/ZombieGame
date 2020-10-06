@@ -26,7 +26,7 @@ namespace Player
         const float REGEN_TIME = 5f;
         const float DOWN_TIME = 20f;
         public float updateHp = 100f;
-        public float maxHp = 100f;
+        public const float maxHp = 100f;
         public bool canRevive = false;
         public bool isDown = false;
         public bool isHit = false;
@@ -46,6 +46,8 @@ namespace Player
         int receiveDamage = 10;
         float regenTime = REGEN_TIME;
         Renderer rend;
+
+        PlayerInventory inv = PlayerInventory.Instance;
 
 
         private void Start()
@@ -232,6 +234,10 @@ namespace Player
 
         void Dead()
         {
+            foreach (GameObject gun in inv.guns)
+            {
+                gun.SetActive(false);
+            }
             isDead = true;
             rend.enabled = false;
             cameraSpectate.SetActive(true);
@@ -239,6 +245,10 @@ namespace Player
 
         public void Respawn()
         {
+            foreach (GameObject gun in inv.guns)
+            {
+                gun.SetActive(true);
+            }
             isDead = false;
             rend.enabled = true;
             cameraSpectate.SetActive(false);
