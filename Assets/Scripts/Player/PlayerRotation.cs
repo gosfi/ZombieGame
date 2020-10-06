@@ -15,7 +15,12 @@ public class PlayerRotation : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+   //void Update()
+   //{
+   //    RotatePlayer();
+   //}
+
+    public override void OnStartAuthority()
     {
         RotatePlayer();
     }
