@@ -21,6 +21,8 @@ public class WaveManager : NetworkBehaviour
     public int nbOfZombieInWave;
     public bool IsInWave = false;
 
+    public List<PlayerMovement> players;
+
     public Spawner[] spawners;
 
     private void Awake()
@@ -29,12 +31,11 @@ public class WaveManager : NetworkBehaviour
     }
 
     public List<Pool> pools;
-    public PlayerMovement[] players;
     public Dictionary<string, Queue<GameObject>> poolDictionnary;
 
     private void Start()
     {
-        
+
         nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
@@ -94,8 +95,14 @@ public class WaveManager : NetworkBehaviour
 
     private void Intermission()
     {
-
-        StartWave();
+        foreach (PlayerMovement player in players)
+        {
+            if (player.isDead)
+            {
+                player.Respawn();
+            }
+        }
+        //StartWave();
     }
 
     private void StartWave()

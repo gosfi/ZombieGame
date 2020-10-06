@@ -39,7 +39,6 @@ namespace Player
         public GameObject playerDownTime;
         public GameObject playerReviveTime;
         public GameObject playerReviveCircle;
-
         float regenPoint = 20f;
         public bool isDead = false;
         bool startTime = false;
