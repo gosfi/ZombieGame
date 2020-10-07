@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
+using Cinemachine;
 
 public class Gun : NetworkBehaviour
 {
@@ -12,7 +13,7 @@ public class Gun : NetworkBehaviour
 
     public Vector3 AimDownSight, HipFire; //0,-0.25,0.8
 
-    public Camera fpsCam;
+    public CinemachineVirtualCamera fpsCam;
 
     public float nextTimeToFire;
 
