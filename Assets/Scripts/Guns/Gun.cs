@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Gun : MonoBehaviour
 {
     public int nbOfBullets, maxBullets;
