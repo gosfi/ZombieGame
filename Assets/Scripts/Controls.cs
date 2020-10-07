@@ -27,6 +27,14 @@ namespace TheControls
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""fbae6a26-547b-4954-9ce9-bd88eb0100ec"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -40,6 +48,61 @@ namespace TheControls
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""MoveControls"",
+                    ""id"": ""88ba69ed-9ae9-413f-8630-4cc439222a47"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""44cfbb5e-3501-4570-83a8-8a8068fa8f02"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2549eb58-9265-4879-9419-9af5601710f6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ec8b658a-72db-48f6-8e63-4b8a3673e152"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b0bb7fc9-a21a-465f-a995-487f7f708150"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -66,6 +129,7 @@ namespace TheControls
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+            m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -116,11 +180,13 @@ namespace TheControls
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Look;
+        private readonly InputAction m_Player_Move;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
             public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Look => m_Wrapper.m_Player_Look;
+            public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -133,6 +199,9 @@ namespace TheControls
                     @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                    @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                    @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                    @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -140,6 +209,9 @@ namespace TheControls
                     @Look.started += instance.OnLook;
                     @Look.performed += instance.OnLook;
                     @Look.canceled += instance.OnLook;
+                    @Move.started += instance.OnMove;
+                    @Move.performed += instance.OnMove;
+                    @Move.canceled += instance.OnMove;
                 }
             }
         }
@@ -156,6 +228,7 @@ namespace TheControls
         public interface IPlayerActions
         {
             void OnLook(InputAction.CallbackContext context);
+            void OnMove(InputAction.CallbackContext context);
         }
     }
 }

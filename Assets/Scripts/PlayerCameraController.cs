@@ -12,6 +12,7 @@ public class PlayerCameraController : NetworkBehaviour
     [SerializeField] private Transform playerTransform = null;
     [SerializeField] private CinemachineVirtualCamera virtualCamera = null;
 
+
     private Controls controls;
     private Controls Control
     {
@@ -40,6 +41,7 @@ public class PlayerCameraController : NetworkBehaviour
 
         Control.Player.Look.performed += ctx => Look(ctx.ReadValue<Vector2>());
 
+
     }
 
     [ClientCallback]
@@ -59,8 +61,6 @@ public class PlayerCameraController : NetworkBehaviour
     private void Look(Vector2 lookAxis)
     {
         float deltaTime = Time.deltaTime;
-
-
 
         transposer.m_FollowOffset.y = Mathf.Clamp(transposer.m_FollowOffset.y - (lookAxis.y * cameraVelocity.y * deltaTime), maxFollowOffset.x, maxFollowOffset.y);
 
