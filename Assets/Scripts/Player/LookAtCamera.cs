@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class LookAtCamera : MonoBehaviour
+public class LookAtCamera : NetworkBehaviour
 {
     public new Camera camera;
 

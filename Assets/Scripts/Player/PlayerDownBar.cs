@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Player;
+using Mirror;
 
-public class PlayerDownBar : MonoBehaviour
+public class PlayerDownBar : NetworkBehaviour
 {
     private PlayerMovement pSettings;
     public Image fillImage;

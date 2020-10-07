@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class PlayerCircleRevive : MonoBehaviour
+public class PlayerCircleRevive : NetworkBehaviour
 {
     private PlayerMovement pSettings;
     public Transform loadingBar;

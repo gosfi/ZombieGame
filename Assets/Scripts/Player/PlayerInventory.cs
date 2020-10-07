@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : NetworkBehaviour
 {
   
 
@@ -45,7 +46,7 @@ public class PlayerInventory : MonoBehaviour
             }
             if (index < 0)
             {
-                index = 3;
+                index = 2;
             }
 
             for (int i = 0; i < guns.Length; ++i)

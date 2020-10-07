@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Spawner : MonoBehaviour
+public class Spawner : NetworkBehaviour
 {
     bool canSpawn = true;
     float timer = 5f;
@@ -11,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     WaveManager wave;
 
-    private void Start()
+    private void Awake()
     {
         wave = WaveManager.instance;
     }
@@ -24,15 +25,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        if (canSpawn && timer <= 0)
-        {
-            wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
-            timer = 5f;
-        }
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {

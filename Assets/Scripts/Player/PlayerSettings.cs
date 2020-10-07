@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerSettings : MonoBehaviour
+public class PlayerSettings : NetworkBehaviour
 {
     const float REGEN_TIME = 5f;
     const float DOWN_TIME = 20f;

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerRotation : MonoBehaviour
+public class PlayerRotation : NetworkBehaviour
 {
 
     public float mouseSensitivity = 500f;
@@ -14,7 +15,12 @@ public class PlayerRotation : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+   //void Update()
+   //{
+   //    RotatePlayer();
+   //}
+
+    public override void OnStartAuthority()
     {
         RotatePlayer();
     }

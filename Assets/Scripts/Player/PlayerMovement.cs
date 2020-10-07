@@ -41,14 +41,16 @@ namespace Player
         public GameObject playerReviveCircle;
 
         float regenPoint = 20f;
-        bool isDead = false;
+        public bool isDead = false;
         bool startTime = false;
         int receiveDamage = 10;
         float regenTime = REGEN_TIME;
+        Renderer rend;
 
 
         private void Start()
         {
+            rend = GetComponent<Renderer>();
             Cursor.lockState = CursorLockMode.Locked;
             player = this.transform;
             controller = GetComponent<CharacterController>();
@@ -56,13 +58,16 @@ namespace Player
 
         void Update()
         {
-            Move();
-            RotatePlayer();
-            Gravity();
-            CheckGround();
-            Regen();
-            Down();
-            Revive();
+          //  if (isLocalPlayer)
+           // {
+                Move();
+                RotatePlayer();
+                Gravity();
+                CheckGround();
+                Regen();
+                Down();
+                Revive();
+         //  }
         }
 
         void Move()
@@ -176,14 +181,12 @@ namespace Player
 
             if (isDown)
             {
-                /*reviveZone.SetActive(true);
+                reviveZone.SetActive(true);
                 playerDownTime.SetActive(true);
                 playerReviveTime.SetActive(true);
                 playerReviveCircle.SetActive(true);
                 downTime -= Time.deltaTime;
-                canRevive = true;*/
-                 Dead();
-
+                canRevive = true;
             }
 
             if (downTime <= 0)
@@ -229,9 +232,17 @@ namespace Player
 
         void Dead()
         {
-             SceneManager.LoadScene("Demo");
-            //Destroy(player);
+            isDead = true;
+            rend.enabled = false;
             cameraSpectate.SetActive(true);
+        }
+
+        public void Respawn()
+        {
+            isDead = false;
+            rend.enabled = true;
+            cameraSpectate.SetActive(false);
+            updateHp = maxHp;
         }
 
     }

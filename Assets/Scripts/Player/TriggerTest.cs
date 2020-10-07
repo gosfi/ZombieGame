@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class TriggerTest : MonoBehaviour
+using Mirror;
+public class TriggerTest : NetworkBehaviour
 {
     Color oldColor = Color.white;
     

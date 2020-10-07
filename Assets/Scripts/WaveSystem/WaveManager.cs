@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
+using Player;
 
-public class WaveManager : MonoBehaviour
+public class WaveManager : NetworkBehaviour
 {
     [System.Serializable]
     public class Pool
@@ -27,10 +29,12 @@ public class WaveManager : MonoBehaviour
     }
 
     public List<Pool> pools;
+    public PlayerMovement[] players;
     public Dictionary<string, Queue<GameObject>> poolDictionnary;
 
     private void Start()
     {
+        
         nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
@@ -85,20 +89,14 @@ public class WaveManager : MonoBehaviour
         waveNumber++;
         nbOfZombieInWave = 5 * waveNumber;
 
-       // Intermission();
+        Intermission();
     }
 
-   /* private void Intermission()
+    private void Intermission()
     {
-        float timer = 30f;
 
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
-        {
-            StartWave();
-        }
-    }*/
+        StartWave();
+    }
 
     private void StartWave()
     {
