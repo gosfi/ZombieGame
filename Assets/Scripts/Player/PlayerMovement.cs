@@ -237,6 +237,7 @@ namespace Player
             {
                 gun.SetActive(false);
             }
+            gameObject.tag = "dead";
             isDead = true;
             rend.enabled = false;
             cameraSpectate.SetActive(true);
@@ -248,6 +249,7 @@ namespace Player
             {
                 gun.SetActive(true);
             }
+            gameObject.tag = "criss";
             isDead = false;
             rend.enabled = true;
             cameraSpectate.SetActive(false);
