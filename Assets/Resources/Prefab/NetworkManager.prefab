@@ -62,13 +62,14 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
-  minPlayers: 2
+  minPlayers: 1
   menuScene: Assets/Scenes/RaphMenuOnline.unity
   roomPlayerPrefab: {fileID: 4461297401377377393, guid: 95c81b7e45a912c43bfb153f54181ab0,
     type: 3}
   gamePlayerPrefab: {fileID: 7877273547108685408, guid: da0e904018f18c04889a0ac2c2518372,
     type: 3}
-  playerSpawnSystem: {fileID: 0}
+  playerSpawnSystem: {fileID: 8449340015073486960, guid: c61a7243d43e9f04f946fb62c3c359c9,
+    type: 3}
 --- !u!114 &8461573292163406869
 MonoBehaviour:
   m_ObjectHideFlags: 0

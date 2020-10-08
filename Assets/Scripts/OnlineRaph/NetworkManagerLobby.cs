@@ -151,7 +151,6 @@ public class NetworkManagerLobby : NetworkManager
         {
             for (int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
-                Debug.Log("JRENTE DU LA DEDANS?");
                 var conn = RoomPlayers[i].connectionToClient;
                 var gamePlayerInstance = Instantiate(gamePlayerPrefab);
                 gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
