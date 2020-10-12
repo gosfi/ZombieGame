@@ -3820,12 +3820,12 @@ PrefabInstance:
     - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
       propertyPath: AimDownSight.y
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
       propertyPath: HipFire.y
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
@@ -3847,6 +3847,16 @@ PrefabInstance:
       propertyPath: ammoPistol
       value: 
       objectReference: {fileID: 2911559801279366572}
+    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
+        type: 3}
+      propertyPath: HipFire.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646171690757811260, guid: 5f48adbf93b53074099eebba90d5634a,
+        type: 3}
+      propertyPath: AimDownSight.x
+      value: -0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 1488409398631163415, guid: 5f48adbf93b53074099eebba90d5634a, type: 3}

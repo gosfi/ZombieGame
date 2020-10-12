@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - criss
+  - dead
   layers:
   - Default
   - TransparentFX
