@@ -10,7 +10,6 @@ public class PlayerInventory : NetworkBehaviour
     public GameObject[] guns = new GameObject[3];
     public GameObject[] slots = new GameObject[3];
     public GameObject[] ammo = new GameObject[3];
-    public Transform player;
 
     public Animator animator;
 
