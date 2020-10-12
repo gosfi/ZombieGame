@@ -5,11 +5,14 @@ using Mirror;
 
 public class PlayerInventory : NetworkBehaviour
 {
-  
+
 
     public GameObject[] guns = new GameObject[3];
     public GameObject[] slots = new GameObject[3];
     public GameObject[] ammo = new GameObject[3];
+    public Transform player;
+
+    public Animator animator;
 
     int index = 0;
 
@@ -22,10 +25,12 @@ public class PlayerInventory : NetworkBehaviour
             {
                 index++;
             }
-            if(index >= 3)
+            if (index >= 3)
             {
                 index = 0;
             }
+
+
 
             for (int i = 0; i < guns.Length; ++i)
             {
@@ -37,6 +42,7 @@ public class PlayerInventory : NetworkBehaviour
             guns[index].SetActive(true);
             slots[index].SetActive(true);
             ammo[index].SetActive(true);
+
         }
         else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
@@ -60,11 +66,21 @@ public class PlayerInventory : NetworkBehaviour
             slots[index].SetActive(true);
             ammo[index].SetActive(true);
         }
+
+        if (index == 0)
+        {
+            animator.SetBool("pistol", true);
+        }
+        else
+        {
+            animator.SetBool("pistol", false);
+        }
     }
 
     private void Update()
     {
         Select();
+        
         Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 }
