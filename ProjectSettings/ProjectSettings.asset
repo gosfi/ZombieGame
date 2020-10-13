@@ -679,6 +679,6 @@ PlayerSettings:
   projectName: ZombieGame
   organizationId: gosfi21
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0

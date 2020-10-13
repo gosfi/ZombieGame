@@ -25,6 +25,8 @@ public class WaveManager : NetworkBehaviour
 
     public Spawner[] spawners;
 
+    float timer = 30f;
+
     private void Awake()
     {
         instance = this;
@@ -54,6 +56,20 @@ public class WaveManager : NetworkBehaviour
         }
 
         StartWave();
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        Debug.Log(timer);
+        if (timer <= 0 && !IsInWave)
+        {
+            StartWave();
+        }
+        else
+        {
+            return;
+        }
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 pos, Quaternion rotation)
@@ -89,24 +105,14 @@ public class WaveManager : NetworkBehaviour
     {
         waveNumber++;
         nbOfZombieInWave = 5 * waveNumber;
-
-        Intermission();
+        timer = 45f;
+        IsInWave = false;
     }
 
-    private void Intermission()
-    {
-        foreach (PlayerMovement player in players)
-        {
-            if (player.isDead)
-            {
-                player.Respawn();
-            }
-        }
-        //StartWave();
-    }
 
     private void StartWave()
     {
+        IsInWave = true;
         for (int i = 0; i < nbOfZombieInWave; ++i)
         {
             foreach (Spawner spawn in spawners)

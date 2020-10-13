@@ -11,6 +11,8 @@ public class PlayerInventory : NetworkBehaviour
     public GameObject[] slots = new GameObject[3];
     public GameObject[] ammo = new GameObject[3];
 
+    public Animator animator;
+
     int index = 0;
 
     #region Singleton
@@ -40,6 +42,8 @@ public class PlayerInventory : NetworkBehaviour
                 index = 0;
             }
 
+
+
             for (int i = 0; i < guns.Length; ++i)
             {
                 guns[i].SetActive(false);
@@ -50,6 +54,7 @@ public class PlayerInventory : NetworkBehaviour
             guns[index].SetActive(true);
             slots[index].SetActive(true);
             ammo[index].SetActive(true);
+
         }
         else if (Input.GetAxis("Mouse ScrollWheel") <= -0.1f)
         {
@@ -59,7 +64,7 @@ public class PlayerInventory : NetworkBehaviour
             }
             if (index < 0)
             {
-                index = 3;
+                index = 2;
             }
 
             for (int i = 0; i < guns.Length; ++i)
@@ -73,11 +78,21 @@ public class PlayerInventory : NetworkBehaviour
             slots[index].SetActive(true);
             ammo[index].SetActive(true);
         }
+
+        if (index == 0)
+        {
+            animator.SetBool("pistol", true);
+        }
+        else
+        {
+            animator.SetBool("pistol", false);
+        }
     }
 
     private void Update()
     {
         Select();
+        
         Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 }

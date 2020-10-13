@@ -59,8 +59,8 @@ namespace Player
 
         void Update()
         {
-            if (isLocalPlayer)
-            {
+          //  if (isLocalPlayer)
+           // {
                 Move();
                 RotatePlayer();
                 Gravity();
@@ -68,7 +68,7 @@ namespace Player
                 Regen();
                 Down();
                 Revive();
-            }
+         //  }
         }
 
         void Move()

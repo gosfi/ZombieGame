@@ -28,12 +28,14 @@ public class Enemies : NetworkBehaviour
     public LayerMask playerLayers;
     private Transform player;
 
+    WaveManager wave;
+
 
     private void Start()
     {
         hitTimer = timer;
         agent.speed = speed;
-
+        wave = WaveManager.instance;
 
         player = GameObject.FindGameObjectWithTag("criss").transform;
         Debug.Log($"{player} is the player");
@@ -137,5 +139,6 @@ public class Enemies : NetworkBehaviour
     void Dead()
     {
         Destroy(zombie);
+        wave.reduceZombieNumber();
     }
 }
