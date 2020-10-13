@@ -59,16 +59,16 @@ namespace Player
 
         void Update()
         {
-          //  if (isLocalPlayer)
-           // {
-                Move();
-                RotatePlayer();
-                Gravity();
-                CheckGround();
-                Regen();
-                Down();
-                Revive();
-         //  }
+            //  if (isLocalPlayer)
+            // {
+            // Move();
+            // RotatePlayer();
+            Gravity();
+            CheckGround();
+            Regen();
+            Down();
+            Revive();
+            //  }
         }
 
         void Move()
@@ -251,6 +251,23 @@ namespace Player
             rend.enabled = true;
             cameraSpectate.SetActive(false);
             updateHp = maxHp;
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("criss"))
+            {
+                 reviveText.SetActive(true);
+            }
+           
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("criss"))
+            {
+                 reviveText.SetActive(false);
+            }
+            
         }
 
     }
