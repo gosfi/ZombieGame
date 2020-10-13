@@ -31,7 +31,7 @@ public class Enemies : NetworkBehaviour
     WaveManager wave;
 
 
-    private void Start()
+    private void OnEnable()
     {
         hitTimer = timer;
         agent.speed = speed;
@@ -44,7 +44,7 @@ public class Enemies : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Distance();
     }
 

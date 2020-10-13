@@ -141,13 +141,13 @@ public class NetworkManagerLobby : NetworkManager
                 return;
             }
 
-            ServerChangeScene("MultiplayerSpawns");
+            ServerChangeScene("Demo");
         }
     }
 
     public override void ServerChangeScene(string newSceneName)
     {
-        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Multiplayer"))
+        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Demo"))
         {
             for (int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
@@ -166,7 +166,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerSceneChanged(string sceneName)
     {
-        if (sceneName.StartsWith("Multiplayer"))
+        if (sceneName.StartsWith("Demo"))
         {
             GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
             NetworkServer.Spawn(playerSpawnSystemInstance);
