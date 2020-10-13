@@ -25,7 +25,7 @@ public class WaveManager : NetworkBehaviour
 
     public Spawner[] spawners;
 
-    float timer = 30f;
+    float timer = 45f;
 
     private void Awake()
     {

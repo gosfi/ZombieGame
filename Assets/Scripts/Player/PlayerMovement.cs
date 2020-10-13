@@ -201,13 +201,10 @@ namespace Player
             if (Input.GetKey(KeyCode.F) && canRevive)
             {
                 reviveTime += 2 * Time.deltaTime;
-
-
             }
             else
             {
                 reviveTime -= Time.deltaTime;
-
             }
 
             if (reviveTime <= 0)
