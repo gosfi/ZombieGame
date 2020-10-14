@@ -40,6 +40,7 @@ public class PlayerCameraController : NetworkBehaviour
         enabled = true;
 
         Control.Player.Look.performed += ctx => Look(ctx.ReadValue<Vector2>());
+        Cursor.lockState = CursorLockMode.Locked;
 
 
     }
