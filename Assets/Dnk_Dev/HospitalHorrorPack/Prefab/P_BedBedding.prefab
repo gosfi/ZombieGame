@@ -16,8 +16,8 @@ GameObject:
   m_Name: SM_Bed_01_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 73
   m_IsActive: 1
 --- !u!4 &4544084983577320
 Transform:
@@ -110,8 +110,8 @@ GameObject:
   m_Name: BedBedding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 73
   m_IsActive: 1
 --- !u!4 &4455076546726790
 Transform:
@@ -201,7 +201,7 @@ GameObject:
   m_Name: SM_BedBedding_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4159788426347266
@@ -231,12 +231,13 @@ GameObject:
   - component: {fileID: 33411820191936498}
   - component: {fileID: 23413363927210872}
   - component: {fileID: 64802454321451454}
+  - component: {fileID: 6414373211860184431}
   m_Layer: 0
   m_Name: SM_Bed_01_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 73
   m_IsActive: 1
 --- !u!4 &4741495840822710
 Transform:
@@ -313,6 +314,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: b47f5c9ac3a4adc4582f259efbe3c8e5, type: 3}
+--- !u!65 &6414373211860184431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722683673455760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 245.0829, y: 174.39066, z: 121.4024}
+  m_Center: {x: -11.981452, y: 87.17253, z: -3.7395003}
 --- !u!1 &1799558748252334
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +350,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799558748252334}
-  m_LocalRotation: {x: -0, y: 0.7042063, z: -0, w: 0.70999545}
+  m_LocalRotation: {x: 0, y: 0.7042068, z: 0, w: 0.709995}
   m_LocalPosition: {x: -14.32, y: 0.003475107, z: 3.817}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
