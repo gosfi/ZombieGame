@@ -16,8 +16,8 @@ GameObject:
   m_Name: P_Med_box_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 73
   m_IsActive: 1
 --- !u!4 &4019922906343924
 Transform:
