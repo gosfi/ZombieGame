@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1087520882227052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.6, y: 0.011, z: 1.973}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4669810235540728}
   - {fileID: 4615116250349166}
@@ -52,8 +52,8 @@ GameObject:
   m_Name: Wall_Door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4167102473293316
 Transform:
@@ -146,8 +146,8 @@ GameObject:
   m_Name: Walli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4317870871457756
 Transform:
@@ -240,8 +240,8 @@ GameObject:
   m_Name: Tile02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4790198537572698
 Transform:
@@ -334,8 +334,8 @@ GameObject:
   m_Name: Door_01_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4615116250349166
 Transform:
@@ -523,7 +523,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 73
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4510286928174692
 Transform:

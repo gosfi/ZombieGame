@@ -48,8 +48,8 @@ GameObject:
   m_Name: Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4317297588239746
 Transform:
@@ -142,8 +142,8 @@ GameObject:
   m_Name: Object001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 73
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &4183832496611050
 Transform:
