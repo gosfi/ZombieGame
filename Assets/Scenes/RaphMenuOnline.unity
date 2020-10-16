@@ -363,6 +363,42 @@ PrefabInstance:
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 1796172993}
+    - target: {fileID: 1784977816891876102, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816891876221, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667104, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_text
+      value: Zombie Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667104, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 79b13af7e0e657c41808e5b3af9a609f,
+        type: 2}
+    - target: {fileID: 1784977816900667104, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2164040, guid: 79b13af7e0e657c41808e5b3af9a609f, type: 2}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784977816900667105, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1919.9998
+      objectReference: {fileID: 0}
     - target: {fileID: 1784977817060763960, guid: 11e4b6112b2d72345ace3a9337d8f184,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -428,10 +464,36 @@ PrefabInstance:
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 1796172993}
+    - target: {fileID: 1784977817557996473, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1784977817828277731, guid: 11e4b6112b2d72345ace3a9337d8f184,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908683266909765247, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82f193516c65acb48b916cefbf6eec92,
+        type: 3}
+    - target: {fileID: 2908683266909765247, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908683266909765247, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908683266909765247, guid: 11e4b6112b2d72345ace3a9337d8f184,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4339623
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e4b6112b2d72345ace3a9337d8f184, type: 3}
