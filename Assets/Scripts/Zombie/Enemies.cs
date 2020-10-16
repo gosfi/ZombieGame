@@ -43,8 +43,7 @@ public class Enemies : NetworkBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {  
         Distance();
     }
 

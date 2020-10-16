@@ -205,6 +205,7 @@ namespace Player
         public void Respawn()
         {
             isDead = false;
+            isDown = false;
             rend.enabled = true;
             cameraSpectate.SetActive(false);
             updateHp = maxHp;
