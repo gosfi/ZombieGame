@@ -21,12 +21,12 @@ namespace Player
         float xRotation = 0f;
         Vector3 velocity;
         bool isGrounded;
-        [SerializeField] Camera camera;
+        
 
         const float REGEN_TIME = 5f;
         const float DOWN_TIME = 20f;
         public float updateHp = 100f;
-        public const float maxHp = 100f;
+        public float maxHp = 100f;
         public bool canRevive = false;
         public bool isDown = false;
         public bool isHit = false;
@@ -39,14 +39,13 @@ namespace Player
         public GameObject playerDownTime;
         public GameObject playerReviveTime;
         public GameObject playerReviveCircle;
+
         float regenPoint = 20f;
         public bool isDead = false;
         bool startTime = false;
         int receiveDamage = 10;
         float regenTime = REGEN_TIME;
         Renderer rend;
-
-        PlayerInventory inv = PlayerInventory.Instance;
 
 
         private void Start()
@@ -59,13 +58,16 @@ namespace Player
 
         void Update()
         {
-           
-            Gravity();
-            CheckGround();
-            Regen();
-            Down();
-            Revive();
+          
+                Gravity();
+                CheckGround();
+                Regen();
+                Down();
+                Revive();
+        
         }
+
+       
 
         void Gravity()
         {
@@ -83,6 +85,7 @@ namespace Player
             }
         }
 
+       
 
         public void Hit(float dmgReceived)
         {
@@ -162,10 +165,13 @@ namespace Player
             if (Input.GetKey(KeyCode.F) && canRevive)
             {
                 reviveTime += 2 * Time.deltaTime;
+
+
             }
             else
             {
                 reviveTime -= Time.deltaTime;
+
             }
 
             if (reviveTime <= 0)
@@ -191,11 +197,6 @@ namespace Player
 
         void Dead()
         {
-            foreach (GameObject gun in inv.guns)
-            {
-                gun.SetActive(false);
-            }
-            gameObject.tag = "dead";
             isDead = true;
             rend.enabled = false;
             cameraSpectate.SetActive(true);
@@ -203,33 +204,13 @@ namespace Player
 
         public void Respawn()
         {
-            foreach (GameObject gun in inv.guns)
-            {
-                gun.SetActive(true);
-            }
-            gameObject.tag = "criss";
             isDead = false;
+            isDown = false;
             rend.enabled = true;
             cameraSpectate.SetActive(false);
             updateHp = maxHp;
         }
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("criss"))
-            {
-                 reviveText.SetActive(true);
-            }
-           
-        }
 
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("criss"))
-            {
-                 reviveText.SetActive(false);
-            }
-            
-        }
     }
 }
 

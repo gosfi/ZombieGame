@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using Cinemachine;
 
 public class LookAtCamera : NetworkBehaviour
 {
-    public new Camera camera;
+    public new CinemachineVirtualCamera camera;
 
     // Update is called once per frame
     void Update()

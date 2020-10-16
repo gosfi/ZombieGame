@@ -21,22 +21,30 @@ public class WaveManager : NetworkBehaviour
     public int nbOfZombieInWave;
     public bool IsInWave = false;
 
-    public List<PlayerMovement> players;
-
     public Spawner[] spawners;
 
-    float timer = 45f;
+    float timer = 30f;
+    public List<Pool> pools;
+    private GameObject[] players;
+
+    public List<PlayerMovement> allPlayers;
+    public Dictionary<string, Queue<GameObject>> poolDictionnary;
+
 
     private void Awake()
     {
         instance = this;
     }
 
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionnary;
 
     private void Start()
     {
+        players = GameObject.FindGameObjectsWithTag("criss");
+
+        foreach (var obj in players)
+        {
+            allPlayers.Add(obj.GetComponent<PlayerMovement>());
+        }
 
         nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
@@ -103,11 +111,19 @@ public class WaveManager : NetworkBehaviour
 
     private void EndTheWave()
     {
+        foreach(var obj in allPlayers)
+        {
+            if(obj.isDead || obj.isDown)
+            {
+                obj.Respawn();
+            }
+        }
         waveNumber++;
         nbOfZombieInWave = 5 * waveNumber;
         timer = 45f;
         IsInWave = false;
     }
+
 
 
     private void StartWave()
