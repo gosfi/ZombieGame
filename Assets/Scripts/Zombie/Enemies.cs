@@ -67,6 +67,11 @@ public class Enemies : NetworkBehaviour
             player.Hit(damage);
             Debug.Log(players.name + "s'est fait hit");
         }
+
+        if (player.GetComponent<PlayerMovement>().isDead)
+        {
+            NextTarget();
+        }
     }
 
     public virtual void Distance()
