@@ -199,7 +199,6 @@ namespace Player
             isDead = true;
             gameObject.SetActive(false);
             transform.gameObject.tag = "dead";
-            
         }
 
         public void Respawn()

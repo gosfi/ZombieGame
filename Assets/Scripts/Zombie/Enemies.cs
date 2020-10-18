@@ -38,12 +38,12 @@ public class Enemies : NetworkBehaviour
         wave = WaveManager.instance;
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
-//        Debug.Log($"{player} is the player");
+        //        Debug.Log($"{player} is the player");
     }
 
     // Update is called once per frame
     void Update()
-    {  
+    {
         Distance();
     }
 
@@ -66,9 +66,7 @@ public class Enemies : NetworkBehaviour
 
         foreach (Collider players in hitPlayer)
         {
-
             PlayerMovement player = players.GetComponent<PlayerMovement>();
-
             player.Hit(damage);
             Debug.Log(players.name + "s'est fait hit");
         }
@@ -76,7 +74,7 @@ public class Enemies : NetworkBehaviour
 
     public virtual void Distance()
     {
-//        Debug.Log("start distance method");
+        //        Debug.Log("start distance method");
         distance = Vector3.Distance(distancePoint.position, player.position);
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);
@@ -93,14 +91,11 @@ public class Enemies : NetworkBehaviour
             hitTimer -= Time.deltaTime;
             if (isInDistance)
             {
-                Debug.Log("deuxieme if calisse");
                 Attack();
                 isInDistance = false;
             }
             if (hitTimer <= 0)
             {
-                Debug.Log("troisieme if esti");
-
                 Attack();
                 hitTimer = timer;
 
@@ -139,5 +134,13 @@ public class Enemies : NetworkBehaviour
     {
         Destroy(zombie);
         wave.reduceZombieNumber();
+    }
+
+    public void NextTarget()
+    {
+        if(player.GetComponent<PlayerMovement>().isDead)
+        {
+             player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 }
