@@ -21,7 +21,7 @@ namespace Player
         float xRotation = 0f;
         Vector3 velocity;
         bool isGrounded;
-        
+
 
         const float REGEN_TIME = 5f;
         const float DOWN_TIME = 20f;
@@ -58,16 +58,16 @@ namespace Player
 
         void Update()
         {
-          
-                Gravity();
-                CheckGround();
-                Regen();
-                Down();
-                Revive();
-        
+
+            Gravity();
+            CheckGround();
+            Regen();
+            Revive();
+           
+            Debug.Log(updateHp);
         }
 
-       
+
 
         void Gravity()
         {
@@ -85,12 +85,16 @@ namespace Player
             }
         }
 
-       
+
 
         public void Hit(float dmgReceived)
         {
             updateHp -= dmgReceived;
             Debug.Log(updateHp + "HP");
+             if (updateHp <= 0)
+            {
+                Dead();
+            }
         }
 
         void Regen()
@@ -131,16 +135,9 @@ namespace Player
                     regenTime = REGEN_TIME;
                 }
             }
-
-            if (updateHp <= 0 && !isDead)
-            {
-                updateHp = 0;
-                isDown = true;
-
-            }
         }
 
-        void Down()
+        /*void Down()
         {
 
 
@@ -158,7 +155,7 @@ namespace Player
             {
                 Dead();
             }
-        }
+        }*/
 
         void Revive()
         {
@@ -197,18 +194,18 @@ namespace Player
 
         void Dead()
         {
+            Debug.LogError("is fucking dead bro");
             isDead = true;
-            rend.enabled = false;
-            cameraSpectate.SetActive(true);
+            gameObject.SetActive(false);
+            transform.gameObject.tag = "dead";
         }
 
         public void Respawn()
         {
             isDead = false;
-            isDown = false;
-            rend.enabled = true;
-            cameraSpectate.SetActive(false);
             updateHp = maxHp;
+            gameObject.SetActive(true);
+            transform.gameObject.tag = "Player";
         }
 
     }

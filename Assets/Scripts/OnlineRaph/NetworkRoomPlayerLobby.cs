@@ -45,7 +45,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
 
     public override void OnStartAuthority()
     {
-        Debug.Log("jsuis la");
+//        Debug.Log("jsuis la");
 
         CmdSetDisplayName(PlayerNameInput.DisplayName);
 

@@ -80,6 +80,6 @@ public class PlayerInventory : NetworkBehaviour
     {
         Select();
         
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+//        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 }

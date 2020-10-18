@@ -31,14 +31,14 @@ public class Enemies : NetworkBehaviour
     WaveManager wave;
 
 
-    private void Start()
+    private void OnEnable()
     {
         hitTimer = timer;
         agent.speed = speed;
         wave = WaveManager.instance;
 
-        player = GameObject.FindGameObjectWithTag("criss").transform;
-        Debug.Log($"{player} is the player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+//        Debug.Log($"{player} is the player");
     }
 
     // Update is called once per frame
@@ -76,7 +76,7 @@ public class Enemies : NetworkBehaviour
 
     public virtual void Distance()
     {
-        Debug.Log("start distance method");
+//        Debug.Log("start distance method");
         distance = Vector3.Distance(distancePoint.position, player.position);
 
         Collider[] distancePlayer = Physics.OverlapSphere(distancePoint.position, distanceRange, playerLayers);

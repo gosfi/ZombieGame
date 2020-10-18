@@ -28,7 +28,7 @@ public class PlayerSpawnSystem : NetworkBehaviour
     public override void OnStartServer() 
     {
     NetworkManagerLobby.OnServerReadied += SpawnPlayer;
-        Debug.Log("JSUIS SENSER SPAWN AU START TABARNAK");
+//        Debug.Log("JSUIS SENSER SPAWN AU START TABARNAK");
     }
 
 
