@@ -9,17 +9,15 @@ public class Enemies : NetworkBehaviour
 {
 
     float hp = 100f;
-    // float receiveDamage = 10f;
+    int index = 0;
     bool isInDistance = true;
     float distance;
     float hitTimer;
     float attackRange = 0.5f;
     float distanceRange = 0.8f;
-
     protected float timer = 2f;
     protected float damage = 2f;
     protected float speed = 3.5f;
-
     public NavMeshAgent agent;
     public GameObject zombie;
     public Animator animator;
@@ -27,7 +25,6 @@ public class Enemies : NetworkBehaviour
     public Transform distancePoint;
     public LayerMask playerLayers;
     private Transform player;
-
     WaveManager wave;
 
 
@@ -138,9 +135,10 @@ public class Enemies : NetworkBehaviour
 
     public void NextTarget()
     {
-        if(player.GetComponent<PlayerMovement>().isDead)
+        index++;
+        if (wave.allPlayers[index] != null)
         {
-             player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = wave.allPlayers[index].transform;
         }
     }
 }
