@@ -14,7 +14,7 @@ public class EnemyMove : NetworkBehaviour
     void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
-        destination = GameObject.FindWithTag("criss").transform;
+        destination = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update()

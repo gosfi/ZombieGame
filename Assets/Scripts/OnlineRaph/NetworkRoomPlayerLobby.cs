@@ -45,8 +45,9 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
 
     public override void OnStartAuthority()
     {
-        Debug.Log("jsuis la");
+//        Debug.Log("jsuis la");
 
+        Cursor.lockState = CursorLockMode.None;
         CmdSetDisplayName(PlayerNameInput.DisplayName);
 
         lobbyUI.SetActive(true);

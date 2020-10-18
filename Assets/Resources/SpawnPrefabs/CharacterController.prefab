@@ -3171,7 +3171,7 @@ GameObject:
   - component: {fileID: 5288847708175144907}
   m_Layer: 9
   m_Name: CharacterController
-  m_TagString: criss
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,7 +3268,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   mouseSensitivity: 500
-  camera: {fileID: 0}
   updateHp: 100
   maxHp: 100
   canRevive: 0
@@ -3379,6 +3378,11 @@ PrefabInstance:
     - target: {fileID: 1218737082, guid: a490dd8317887b24993b92fd52472fb8, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 375152206190014306, guid: a490dd8317887b24993b92fd52472fb8,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5362187526608088232, guid: a490dd8317887b24993b92fd52472fb8,
         type: 3}
@@ -3613,6 +3617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675638072758434061, guid: 5f48adbf93b53074099eebba90d5634a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4705386001613299248, guid: 5f48adbf93b53074099eebba90d5634a,
         type: 3}
@@ -3879,6 +3888,11 @@ PrefabInstance:
       propertyPath: ammoMachineGun
       value: 
       objectReference: {fileID: 3184797190889766609}
+    - target: {fileID: 1703058138185243763, guid: be63566d4dc004e4f89f6d410bdc4b2d,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1887628659477359137, guid: be63566d4dc004e4f89f6d410bdc4b2d,
         type: 3}
       propertyPath: m_Layer
