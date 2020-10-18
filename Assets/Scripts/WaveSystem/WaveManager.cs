@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using Player;
+using System.Linq;
+using UnityEngine.SceneManagement;
+
 
 public class WaveManager : NetworkBehaviour
 {
@@ -39,7 +40,7 @@ public class WaveManager : NetworkBehaviour
 
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("criss");
+        players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (var obj in players)
         {
@@ -74,9 +75,25 @@ public class WaveManager : NetworkBehaviour
         {
             StartWave();
         }
-        else
+
+        checkIfAllPlayersAreDead();
+    }
+
+    private void checkIfAllPlayersAreDead()
+    {
+        int nbOfDeaths = 0;
+        foreach (var player in allPlayers)
         {
-            return;
+            if (player.isDead)
+            {
+                nbOfDeaths++;
+            }
+        }
+
+        if (nbOfDeaths == allPlayers.Count)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadSceneAsync("RaphMenuOnline");
         }
     }
 
@@ -111,9 +128,9 @@ public class WaveManager : NetworkBehaviour
 
     private void EndTheWave()
     {
-        foreach(var obj in allPlayers)
+        foreach (var obj in allPlayers)
         {
-            if(obj.isDead || obj.isDown)
+            if (obj.isDead || obj.isDown)
             {
                 obj.Respawn();
             }

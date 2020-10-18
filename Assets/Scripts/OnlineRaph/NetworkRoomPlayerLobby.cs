@@ -47,6 +47,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     {
 //        Debug.Log("jsuis la");
 
+        Cursor.lockState = CursorLockMode.None;
         CmdSetDisplayName(PlayerNameInput.DisplayName);
 
         lobbyUI.SetActive(true);

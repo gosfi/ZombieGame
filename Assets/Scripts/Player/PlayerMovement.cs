@@ -48,8 +48,10 @@ namespace Player
         Renderer rend;
 
 
-        private void Start()
+        private void OnEnable()
         {
+            isDead = false;
+            updateHp = maxHp;
             rend = GetComponent<Renderer>();
             Cursor.lockState = CursorLockMode.Locked;
             player = this.transform;
@@ -194,10 +196,10 @@ namespace Player
 
         void Dead()
         {
-            Debug.LogError("is fucking dead bro");
             isDead = true;
             gameObject.SetActive(false);
             transform.gameObject.tag = "dead";
+            
         }
 
         public void Respawn()

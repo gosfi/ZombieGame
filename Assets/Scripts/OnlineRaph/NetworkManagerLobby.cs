@@ -28,11 +28,13 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnStartServer()
     {
+        Cursor.lockState = CursorLockMode.None;
         spawnPrefabs = Resources.LoadAll<GameObject>("SpawnPrefabs").ToList();
     }
 
     public override void OnStartClient()
     {
+        Cursor.lockState = CursorLockMode.None;
         var prefab = Resources.LoadAll<GameObject>("SpawnPrefabs");
 
         foreach (var prefabs in prefab)
@@ -43,6 +45,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnClientConnect(NetworkConnection conn)
     {
+        Cursor.lockState = CursorLockMode.None;
         base.OnClientConnect(conn);
 
         OnClientConnected?.Invoke();
@@ -57,6 +60,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerConnect(NetworkConnection conn)
     {
+        Cursor.lockState = CursorLockMode.None;
         if (numPlayers >= maxConnections)
         {
             conn.Disconnect();
