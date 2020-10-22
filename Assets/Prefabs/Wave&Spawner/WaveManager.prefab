@@ -51,6 +51,7 @@ MonoBehaviour:
   IsInWave: 0
   spawners: []
   pools: []
+  allPlayers: []
 --- !u!114 &8341688210356147878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  serverOnly: 1
+  serverOnly: 0
   m_AssetId: 
   hasSpawned: 0
