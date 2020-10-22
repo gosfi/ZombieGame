@@ -28,7 +28,6 @@ public class PlayerSpawnSystem : NetworkBehaviour
     public override void OnStartServer() 
     {
     NetworkManagerLobby.OnServerReadied += SpawnPlayer;
-//        Debug.Log("JSUIS SENSER SPAWN AU START TABARNAK");
     }
 
 
@@ -37,8 +36,6 @@ public class PlayerSpawnSystem : NetworkBehaviour
     private void OnDestroy()
     {
         NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
-        Debug.Log("COMMENT CA JME FAIS DELETE CRISS");
-
     }
 
     [Server]

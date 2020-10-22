@@ -688,8 +688,19 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2971214267
       objectReference: {fileID: 0}
+    - target: {fileID: 8341688210356147878, guid: 2c7a18797cc0dd846b89943b27ca9dee,
+        type: 3}
+      propertyPath: serverOnly
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7a18797cc0dd846b89943b27ca9dee, type: 3}
+--- !u!1 &525200842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5624344820630108509, guid: 2c7a18797cc0dd846b89943b27ca9dee,
+    type: 3}
+  m_PrefabInstance: {fileID: 525200841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &672777461
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +713,7 @@ GameObject:
   - component: {fileID: 672777464}
   - component: {fileID: 672777463}
   - component: {fileID: 672777462}
+  - component: {fileID: 672777466}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -784,6 +796,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672777466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672777461}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc238d70ac56ed344a0703cade0dd125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: {fileID: 525200842}
 --- !u!1001 &735770183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,6 +820,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneId
       value: 421573574
+      objectReference: {fileID: 0}
+    - target: {fileID: 539961680167223740, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
+        type: 3}
+      propertyPath: serverOnly
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4876724339578024888, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
         type: 3}
@@ -880,6 +910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneId
       value: 3636280898
+      objectReference: {fileID: 0}
+    - target: {fileID: 539961680167223740, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
+        type: 3}
+      propertyPath: serverOnly
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4876724339578024888, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
         type: 3}
@@ -1398,6 +1433,11 @@ PrefabInstance:
       propertyPath: sceneId
       value: 814191355
       objectReference: {fileID: 0}
+    - target: {fileID: 539961680167223740, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
+        type: 3}
+      propertyPath: serverOnly
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4876724339578024888, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
         type: 3}
       propertyPath: m_Name
@@ -1725,6 +1765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneId
       value: 3318909285
+      objectReference: {fileID: 0}
+    - target: {fileID: 539961680167223740, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
+        type: 3}
+      propertyPath: serverOnly
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4876724339578024888, guid: 94a63b30f826ccd4d8cd1d1795a50a29,
         type: 3}

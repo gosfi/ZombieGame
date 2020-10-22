@@ -18,6 +18,8 @@ public class WaveManager : NetworkBehaviour
 
     public static WaveManager instance;
 
+    public NetworkManagerLobby room;
+
     public int waveNumber;
     public int nbOfZombieInWave;
     public bool IsInWave = false;
@@ -35,6 +37,7 @@ public class WaveManager : NetworkBehaviour
     private void Awake()
     {
         instance = this;
+       // room = NetworkManager.singleton as NetworkManagerLobby;
     }
 
 
@@ -92,6 +95,7 @@ public class WaveManager : NetworkBehaviour
 
         if (nbOfDeaths == allPlayers.Count)
         {
+            
             Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadSceneAsync("RaphMenuOnline");
         }

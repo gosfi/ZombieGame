@@ -28,7 +28,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         }
     }
 
-    private NetworkManagerLobby room;
+    public NetworkManagerLobby room;
 
     private NetworkManagerLobby Room
     {

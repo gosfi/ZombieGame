@@ -51,6 +51,7 @@ MonoBehaviour:
   IsInWave: 0
   spawners: []
   pools: []
+  allPlayers: []
 --- !u!114 &8341688210356147878
 MonoBehaviour:
   m_ObjectHideFlags: 0
