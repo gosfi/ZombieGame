@@ -13,7 +13,7 @@ public class EnemyMove : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         destination = GameObject.FindWithTag("Player").transform;
     }
 

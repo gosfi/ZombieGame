@@ -37,7 +37,6 @@ public class WaveManager : NetworkBehaviour
     private void Awake()
     {
         instance = this;
-       // room = NetworkManager.singleton as NetworkManagerLobby;
     }
 
 

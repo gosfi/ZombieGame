@@ -54,7 +54,7 @@ namespace Player
             updateHp = maxHp;
             rend = GetComponent<Renderer>();
             Cursor.lockState = CursorLockMode.Locked;
-            player = this.transform;
+            player = transform;
             controller = GetComponent<CharacterController>();
         }
 

@@ -78,7 +78,7 @@ namespace Mirror.Websocket
 
         public class SslConfiguration
         {
-            public System.Security.Cryptography.X509Certificates.X509Certificate2 Certificate;
+            public X509Certificate2 Certificate;
             public bool ClientCertificateRequired;
             public System.Security.Authentication.SslProtocols EnabledSslProtocols;
             public bool CheckCertificateRevocation;
