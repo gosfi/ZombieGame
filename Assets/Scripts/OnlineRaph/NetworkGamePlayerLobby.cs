@@ -24,6 +24,8 @@ public class NetworkGamePlayerLobby : NetworkBehaviour
             }
 
             return room = NetworkManager.singleton as NetworkManagerLobby;
+
+            
         }
     }
 
