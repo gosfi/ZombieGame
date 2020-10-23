@@ -95,9 +95,14 @@ public class WaveManager : NetworkBehaviour
 
         if (nbOfDeaths == allPlayers.Count)
         {
-            
+          // foreach (var player in allPlayers)
+          // {
+          //     player.
+          // }
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadSceneAsync("RaphMenuOnline");
+            NetworkManagerLobby.Shutdown();
+            SceneManager.LoadScene("RaphMenuOnline");
+            
         }
     }
 
