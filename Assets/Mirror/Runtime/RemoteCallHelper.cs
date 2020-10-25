@@ -128,7 +128,7 @@ namespace Mirror.RemoteCalls
         }
 
         // we need a way to clean up delegates after tests
-        [System.Obsolete("Removing all delegates will cause problems with other tests as their hashs can not be re-added without reloading scripts", true)]
+        [Obsolete("Removing all delegates will cause problems with other tests as their hashs can not be re-added without reloading scripts", true)]
         internal static void ClearDelegates()
         {
             cmdHandlerDelegates.Clear();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Mirror.RemoteCalls;
 using UnityEngine;
-
+using Object = UnityEngine.Object;
 namespace Mirror
 {
     /// <summary>
@@ -133,7 +133,7 @@ namespace Mirror
                     }
                     else
                     {
-                        GameObject.Destroy(identity.gameObject);
+                        Object.Destroy(identity.gameObject);
                     }
                 }
             }

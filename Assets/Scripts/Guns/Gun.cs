@@ -69,7 +69,7 @@ public class Gun : NetworkBehaviour
 
     public void Reload()
     {
-        nbOfBullets = maxBullets;
+        transform.gameObject.GetComponent<Gun>().nbOfBullets = maxBullets;
         CanShoot = true;
     }
 

@@ -105,12 +105,12 @@ namespace Mirror.Weaver
 
         public static bool IsArraySegment(this TypeReference td)
         {
-            return td.FullName.StartsWith("System.ArraySegment`1", System.StringComparison.Ordinal);
+            return td.FullName.StartsWith("System.ArraySegment`1", StringComparison.Ordinal);
         }
 
         public static bool IsList(this TypeReference td)
         {
-            return td.FullName.StartsWith("System.Collections.Generic.List`1", System.StringComparison.Ordinal);
+            return td.FullName.StartsWith("System.Collections.Generic.List`1", StringComparison.Ordinal);
         }
 
         public static bool CanBeResolved(this TypeReference parent)
