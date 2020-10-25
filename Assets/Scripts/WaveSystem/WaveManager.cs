@@ -52,21 +52,26 @@ public class WaveManager : NetworkBehaviour
         nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
+        cmdSpawnZombies();
+        StartWave();
+    }
+
+    void cmdSpawnZombies()
+    {
+         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
+                NetworkServer.Spawn(obj);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
             poolDictionnary.Add(pool.tag, objectPool);
         }
-
-        StartWave();
     }
 
     private void Update()
@@ -99,8 +104,7 @@ public class WaveManager : NetworkBehaviour
           //     player.
           // }
             Cursor.lockState = CursorLockMode.None;
-            NetworkManagerLobby.Shutdown();
-            SceneManager.LoadScene("RaphMenuOnline");
+            SceneManager.LoadSceneAsync("RaphMenuOnline");
             
         }
     }
