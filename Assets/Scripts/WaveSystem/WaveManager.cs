@@ -53,6 +53,7 @@ public class WaveManager : NetworkBehaviour
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
         CmdPoolThing();
+        
     }
 
     private void Update()
@@ -85,6 +86,7 @@ public class WaveManager : NetworkBehaviour
 
             poolDictionnary.Add(pool.tag, objectPool);
         }
+        StartWave();
     }
 
     private void checkIfAllPlayersAreDead()
