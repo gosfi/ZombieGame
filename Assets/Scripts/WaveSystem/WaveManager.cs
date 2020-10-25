@@ -52,21 +52,7 @@ public class WaveManager : NetworkBehaviour
         nbOfZombieInWave = 5;
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
-        {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
-
-            for (int i = 0; i < pool.size; i++)
-            {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
-            }
-
-            poolDictionnary.Add(pool.tag, objectPool);
-        }
-
-        StartWave();
+        CmdPoolThing();
     }
 
     private void Update()
@@ -79,6 +65,26 @@ public class WaveManager : NetworkBehaviour
         }
 
         checkIfAllPlayersAreDead();
+    }
+    //[Command]
+    private void CmdPoolThing()
+    {
+        foreach (Pool pool in pools)
+        {
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab);
+                //NetworkServer.Spawn(obj);
+
+
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+
+            poolDictionnary.Add(pool.tag, objectPool);
+        }
     }
 
     private void checkIfAllPlayersAreDead()
@@ -94,16 +100,16 @@ public class WaveManager : NetworkBehaviour
 
         if (nbOfDeaths == allPlayers.Count)
         {
-            
+
             NetworkManagerLobby.Shutdown();
             Cursor.lockState = CursorLockMode.None;
-            
+
             SceneManager.LoadScene("RaphMenuOnline");
-            
+
         }
     }
 
-    public GameObject SpawnFromPool(string tag, Vector3 pos, Quaternion rotation)
+    public GameObject CmdSpawnFromPool(string tag, Vector3 pos, Quaternion rotation)
     {
         if (!poolDictionnary.ContainsKey(tag))
         {
@@ -119,10 +125,11 @@ public class WaveManager : NetworkBehaviour
 
         poolDictionnary[tag].Enqueue(objToSpawn);
 
+
         return objToSpawn;
     }
 
-    public void reduceZombieNumber()
+    public void ReduceZombieNumber()
     {
         nbOfZombieInWave--;
 
@@ -156,7 +163,7 @@ public class WaveManager : NetworkBehaviour
         {
             foreach (Spawner spawn in spawners)
             {
-                spawn.SpawnMonster();
+                spawn.CmdSpawnMonster();
             }
         }
     }

@@ -7,6 +7,10 @@ TagManager:
   - Zombie
   - criss
   - dead
+  - Zomb1
+  - Zomb2
+  - Zomb3
+  - Zomb4
   layers:
   - Default
   - TransparentFX

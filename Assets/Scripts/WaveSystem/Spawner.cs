@@ -17,11 +17,13 @@ public class Spawner : NetworkBehaviour
         wave = WaveManager.instance;
     }
 
-    public void SpawnMonster()
+    [Command]
+    public void CmdSpawnMonster()
     {
         if (canSpawn)
         {
-            wave.SpawnFromPool(tag, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(wave.CmdSpawnFromPool(tag, transform.position, Quaternion.identity));
+           // wave.CmdSpawnFromPool(tag, transform.position, Quaternion.identity);
         }
     }
 

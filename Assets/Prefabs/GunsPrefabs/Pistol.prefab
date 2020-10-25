@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5379038358624150836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8369402415577469218}
   - component: {fileID: 7449646131508832831}
-  m_Layer: 0
+  - component: {fileID: 2133304150405795755}
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +126,22 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2133304150405795755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3459974122253986301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15718f0ad6cc19b4fa51641a6078ec98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashHolder: {fileID: 2559730896489642110}
+  flashSprites: []
+  spritesRenderers: []
+  flashTime: 0
 --- !u!1 &4705386001613299248
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862944141759411306}
   - component: {fileID: 4287793587453228242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: flash02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8211431561631242183}
   - component: {fileID: 4242867661273067758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: flash01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,8 +320,8 @@ GameObject:
   - component: {fileID: 8646171690757811260}
   - component: {fileID: 165345072141336989}
   - component: {fileID: 8296842982026288159}
-  - component: {fileID: 4675638072758434061}
-  m_Layer: 0
+  - component: {fileID: 6545605274378315159}
+  m_Layer: 9
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,20 +404,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  nbOfBullets: 2
+  nbOfBullets: 10
   maxBullets: 10
   range: 100
   dmg: 25
   aimSpeed: 0
   fireRate: 2
   CanShoot: 0
-  AimDownSight: {x: 0, y: -0.15, z: 0.5}
-  HipFire: {x: 0.28, y: -0.15, z: 0.5}
+  AimDownSight: {x: -0.08, y: 0.5, z: 0.5}
+  HipFire: {x: 0.1, y: 0.5, z: 0.5}
   fpsCam: {fileID: 0}
   nextTimeToFire: 0.5
   source: {fileID: 0}
-  intensity: 0
-  smooth: 0
+  intensity: 1
+  smooth: 10
   zombie: {fileID: 0}
   ammoPistol: {fileID: 0}
 --- !u!82 &165345072141336989
@@ -521,7 +538,7 @@ MonoBehaviour:
   - {fileID: 4242867661273067758}
   - {fileID: 4287793587453228242}
   flashTime: 0.05
---- !u!114 &4675638072758434061
+--- !u!114 &6545605274378315159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -534,6 +551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  serverOnly: 1
+  serverOnly: 0
   m_AssetId: 
   hasSpawned: 0

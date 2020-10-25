@@ -133,7 +133,7 @@ public class Enemies : NetworkBehaviour
     void Dead()
     {
         Destroy(zombie);
-        wave.reduceZombieNumber();
+        wave.ReduceZombieNumber();
     }
 
     public void NextTarget()

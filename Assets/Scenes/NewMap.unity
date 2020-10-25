@@ -628,6 +628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaveManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5624344820630108509, guid: 2c7a18797cc0dd846b89943b27ca9dee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5624344820630108511, guid: 2c7a18797cc0dd846b89943b27ca9dee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -691,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 8341688210356147878, guid: 2c7a18797cc0dd846b89943b27ca9dee,
         type: 3}
       propertyPath: serverOnly
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7a18797cc0dd846b89943b27ca9dee, type: 3}
