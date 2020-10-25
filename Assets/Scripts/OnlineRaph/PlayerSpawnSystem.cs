@@ -9,9 +9,9 @@ public class PlayerSpawnSystem : NetworkBehaviour
 {
     [SerializeField] private GameObject playerPrefab = null;
 
-    private static List<Transform> spawnPoints = new List<Transform>();
+    public static List<Transform> spawnPoints = new List<Transform>();
 
-    private int nextIndex = 0;
+    public int nextIndex = 0;
 
     public static void AddSpawnPoint(Transform transform)
     {
@@ -32,7 +32,7 @@ public class PlayerSpawnSystem : NetworkBehaviour
 
 
 
-    [ServerCallback]
+    
     private void OnDestroy()
     {
         NetworkManagerLobby.OnServerReadied -= SpawnPlayer;

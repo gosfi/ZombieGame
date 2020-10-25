@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  spawnSystem: {fileID: 8449340015073486963, guid: c61a7243d43e9f04f946fb62c3c359c9,
+    type: 3}
   waveNumber: 0
   nbOfZombieInWave: 0
   IsInWave: 0

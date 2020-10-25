@@ -101,9 +101,10 @@ public class NetworkManagerLobby : NetworkManager
             RoomPlayers.Remove(player);
 
             NotifyPlayersOfReadyState();
+            
         }
-
         base.OnServerDisconnect(conn);
+        
     }
 
     public override void OnStopServer()
@@ -160,7 +161,6 @@ public class NetworkManagerLobby : NetworkManager
                 gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
 
                 NetworkServer.Destroy(conn.identity.gameObject);
-
                 NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject, true);
             }
         }
