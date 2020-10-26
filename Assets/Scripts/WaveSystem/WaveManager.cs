@@ -67,6 +67,7 @@ public class WaveManager : NetworkBehaviour
 
         checkIfAllPlayersAreDead();
     }
+  //  [ClientRpc]
     private void CmdPoolThing()
     {
         foreach (Pool pool in pools)
@@ -155,6 +156,7 @@ public class WaveManager : NetworkBehaviour
     }
 
 
+   // [ClientRpc]
     private void StartWave()
     {
         IsInWave = true;
