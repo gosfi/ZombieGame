@@ -53,7 +53,7 @@ public class WaveManager : NetworkBehaviour
         poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
         CmdPoolThing();
-        
+
     }
 
     private void Update()
@@ -67,7 +67,6 @@ public class WaveManager : NetworkBehaviour
 
         checkIfAllPlayersAreDead();
     }
-    //[Command]
     private void CmdPoolThing()
     {
         foreach (Pool pool in pools)
@@ -77,7 +76,6 @@ public class WaveManager : NetworkBehaviour
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
-                //NetworkServer.Spawn(obj);
 
 
                 obj.SetActive(false);
@@ -110,7 +108,7 @@ public class WaveManager : NetworkBehaviour
 
         }
     }
-
+    
     public GameObject CmdSpawnFromPool(string tag, Vector3 pos, Quaternion rotation)
     {
         if (!poolDictionnary.ContainsKey(tag))
@@ -157,7 +155,6 @@ public class WaveManager : NetworkBehaviour
     }
 
 
-
     private void StartWave()
     {
         IsInWave = true;
@@ -165,7 +162,10 @@ public class WaveManager : NetworkBehaviour
         {
             foreach (Spawner spawn in spawners)
             {
+
+
                 spawn.CmdSpawnMonster();
+
             }
         }
     }

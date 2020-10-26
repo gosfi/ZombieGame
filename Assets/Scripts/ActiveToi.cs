@@ -7,8 +7,8 @@ public class ActiveToi : MonoBehaviour
     public GameObject wave;
 
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        wave.SetActive(true);
+     //   wave.SetActive(true);
     }
 }
