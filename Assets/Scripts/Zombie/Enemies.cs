@@ -47,6 +47,7 @@ public class Enemies : NetworkBehaviour
         Distance();
     }
 
+    [ClientRpc]
     public void Hit(float dmg)
     {
         hp -= dmg;
@@ -56,7 +57,7 @@ public class Enemies : NetworkBehaviour
             Dead();
         }
     }
-
+    [ClientRpc]
     void Attack()
     {
         animator.SetBool("isAttacking", true);
@@ -71,7 +72,7 @@ public class Enemies : NetworkBehaviour
             Debug.Log(players.name + "s'est fait hit");
         }
     }
-
+    [ClientRpc]
     public virtual void Distance()
     {
         //        Debug.Log("start distance method");
@@ -129,13 +130,13 @@ public class Enemies : NetworkBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         Gizmos.DrawWireSphere(distancePoint.position, distanceRange);
     }
-
+    [ClientRpc]
     void Dead()
     {
         Destroy(zombie);
         wave.ReduceZombieNumber();
     }
-
+    [ClientRpc]
     public void NextTarget()
     {
         if(player.GetComponent<PlayerMovement>().isDead)

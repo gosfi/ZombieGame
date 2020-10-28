@@ -6,9 +6,8 @@ using Mirror;
 public class Spawner : NetworkBehaviour
 {
     bool canSpawn = true;
-    float timer = 5f;
 
-    public string tag;
+    public string nametag;
 
     WaveManager wave;
 
@@ -22,7 +21,7 @@ public class Spawner : NetworkBehaviour
     {
         if (canSpawn)
         {
-            GameObject obj = wave.CmdSpawnFromPool(tag, transform.position, Quaternion.identity);
+            GameObject obj = wave.CmdSpawnFromPool(nametag, transform.position, Quaternion.identity);
             NetworkServer.Spawn(obj);
             wave.CmdSpawnFromPool(tag, transform.position, Quaternion.identity);
         }

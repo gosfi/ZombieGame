@@ -37,7 +37,7 @@ public class Gun : NetworkBehaviour
         originRotation = transform.localRotation;
        
     }
-
+    [ClientRpc]
     public void Shoot()
     {
         RaycastHit hit;
@@ -66,13 +66,13 @@ public class Gun : NetworkBehaviour
 
        
     }
-
+    [ClientRpc]
     public void Reload()
     {
         transform.gameObject.GetComponent<Gun>().nbOfBullets = maxBullets;
         CanShoot = true;
     }
-
+    [ClientRpc]
     public virtual void Aim(bool isAiming)
     {
         if (isAiming)
@@ -84,7 +84,7 @@ public class Gun : NetworkBehaviour
             transform.localPosition = Vector3.Lerp(transform.localPosition, HipFire, 15 * Time.deltaTime);
         }
     }
-
+    [ClientRpc]
     public void UpdateSway()
     {
         float t_x_mouse = Input.GetAxis("Mouse X");
