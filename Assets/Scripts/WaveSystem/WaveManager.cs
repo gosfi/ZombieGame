@@ -55,11 +55,11 @@ public class WaveManager : NetworkBehaviour
         CmdPoolThing();
 
     }
-
+    
     private void Update()
     {
         timer -= Time.deltaTime;
-        Debug.Log(timer);
+
         if (timer <= 0 && !IsInWave)
         {
             StartWave();
@@ -67,7 +67,7 @@ public class WaveManager : NetworkBehaviour
 
         checkIfAllPlayersAreDead();
     }
-  //  [ClientRpc]
+    
     private void CmdPoolThing()
     {
         foreach (Pool pool in pools)
@@ -87,7 +87,7 @@ public class WaveManager : NetworkBehaviour
         }
         StartWave();
     }
-
+    
     private void checkIfAllPlayersAreDead()
     {
         int nbOfDeaths = 0;
@@ -98,11 +98,13 @@ public class WaveManager : NetworkBehaviour
                 nbOfDeaths++;
             }
         }
-
+        Debug.Log("NOMBRE DE MORT : " + nbOfDeaths);
+        Debug.Log("NOMBRE DE PLAYER DANS ALLPLAYERS : " + allPlayers.Count);
         if (nbOfDeaths == allPlayers.Count)
         {
 
-            NetworkManagerLobby.Shutdown();
+           // NetworkManagerLobby.Shutdown();
+            NetworkManager.Shutdown();
             Cursor.lockState = CursorLockMode.None;
 
             SceneManager.LoadScene("RaphMenuOnline");
@@ -156,7 +158,7 @@ public class WaveManager : NetworkBehaviour
     }
 
 
-   // [ClientRpc]
+
     private void StartWave()
     {
         IsInWave = true;

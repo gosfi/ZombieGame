@@ -17,7 +17,6 @@ public class Spawner : NetworkBehaviour
         wave = WaveManager.instance;
     }
 
-   // [ClientRpc]
     public void CmdSpawnMonster()
     {
         if (canSpawn)
